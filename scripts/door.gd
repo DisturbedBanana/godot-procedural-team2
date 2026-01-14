@@ -1,10 +1,14 @@
 class_name Door extends Node2D
 
 enum STATE {OPEN = 0, CLOSED = 1, WALL = 2, SECRET = 3}
-
+enum DIR {S=0,N=1,W=2,E=3}
+@export var dir:DIR
 @export var closedNode : Node2D
 @export var openNode : Node2D
-@export var wallNode : Node2D
+@export var wallSNode : Node2D
+@export var wallWNode : Node2D
+@export var wallENode : Node2D
+@export var wallNNode : Node2D
 @export var secretNode : Node2D
 
 var orientation : Utils.ORIENTATION
@@ -41,8 +45,14 @@ func _ready() -> void:
 		set_state(STATE.CLOSED)
 	elif openNode.visible:
 		set_state(STATE.OPEN)
-	elif wallNode.visible:
+	elif wallSNode.visible:
 		set_state(STATE.WALL)
+	elif wallWNode.visible:
+		set_state(STATE.WALL)
+	elif wallENode.visible:
+		set_state(STATE.WALL)
+	elif wallNNode.visible:
+		set_state(STATE.WALL)		
 	elif secretNode.visible:
 		set_state(STATE.SECRET)
 
@@ -64,7 +74,10 @@ func try_unlock() -> void:
 func set_state(new_state : STATE) -> void:
 	closedNode.visible = false
 	openNode.visible = false
-	wallNode.visible = false
+	wallSNode.visible = false
+	wallENode.visible = false
+	wallWNode.visible = false
+	wallNNode.visible = false
 	secretNode.visible = false
 
 	state = new_state
@@ -76,8 +89,19 @@ func set_state(new_state : STATE) -> void:
 			openNode.visible = true
 			collision.set_deferred("disabled", true)
 		STATE.WALL:
-			wallNode.visible = true
-			collision.set_deferred("disabled", false)
+			match dir:
+				DIR.N:
+					wallNNode.visible = true
+					collision.set_deferred("disabled", false)
+				DIR.W:
+					wallWNode.visible = true
+					collision.set_deferred("disabled", false)
+				DIR.S:
+					wallSNode.visible = true
+					collision.set_deferred("disabled", false)
+				DIR.E:
+					wallENode.visible = true
+					collision.set_deferred("disabled", false)
 		STATE.SECRET:
 			secretNode.visible = true
 			collision.set_deferred("disabled", true)
