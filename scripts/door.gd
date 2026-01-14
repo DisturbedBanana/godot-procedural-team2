@@ -1,8 +1,6 @@
 class_name Door extends Node2D
 
 enum STATE {OPEN = 0, CLOSED = 1, WALL = 2, SECRET = 3}
-enum DIR {S=0,N=1,W=2,E=3}
-@export var dir:DIR
 @export var closedNode : Node2D
 @export var openNode : Node2D
 @export var wallSNode : Node2D
@@ -89,17 +87,17 @@ func set_state(new_state : STATE) -> void:
 			openNode.visible = true
 			collision.set_deferred("disabled", true)
 		STATE.WALL:
-			match dir:
-				DIR.N:
+			match orientation:
+				Utils.ORIENTATION.NORTH:
 					wallNNode.visible = true
 					collision.set_deferred("disabled", false)
-				DIR.W:
+				Utils.ORIENTATION.WEST:
 					wallWNode.visible = true
 					collision.set_deferred("disabled", false)
-				DIR.S:
+				Utils.ORIENTATION.SOUTH:
 					wallSNode.visible = true
 					collision.set_deferred("disabled", false)
-				DIR.E:
+				Utils.ORIENTATION.EAST:
 					wallENode.visible = true
 					collision.set_deferred("disabled", false)
 		STATE.SECRET:
