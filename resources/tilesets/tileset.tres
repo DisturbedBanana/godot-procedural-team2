@@ -146,6 +146,8 @@ texture = ExtResource("3_8gkkf")
 9:2/0 = 0
 9:1/0 = 0
 9:0/0 = 0
+10:3/0 = 0
+11:3/0 = 0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_efedq"]
 resource_name = "Obstacles"
