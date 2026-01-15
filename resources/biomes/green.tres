@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BiomeData" load_steps=4 format=3 uid="uid://qgncp3oscdwt"]
+
+[ext_resource type="Script" uid="uid://br2lugol7f5ba" path="res://scripts/generation/biome_data.gd" id="1_oepwp"]
+[ext_resource type="Resource" uid="uid://cbqrqed23rch8" path="res://resources/biomes/forest.tres" id="2_iauw7"]
+[ext_resource type="Resource" uid="uid://b80qw2yn1t42u" path="res://resources/biomes/plains.tres" id="3_bw463"]
+
+[resource]
+resource_name = "Biome"
+script = ExtResource("1_oepwp")
+name = "Green"
+secondaryBiomes = Array[ExtResource("1_oepwp")]([ExtResource("2_iauw7"), ExtResource("3_bw463")])

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="BiomeData" load_steps=2 format=3 uid="uid://5717y26s3y1s"]
+
+[ext_resource type="Script" uid="uid://br2lugol7f5ba" path="res://scripts/generation/biome_data.gd" id="1_0uj33"]
+
+[resource]
+resource_name = "Biome"
+script = ExtResource("1_0uj33")
+name = "Purple forest"
+secondaryBiomes = Array[ExtResource("1_0uj33")]([null])
