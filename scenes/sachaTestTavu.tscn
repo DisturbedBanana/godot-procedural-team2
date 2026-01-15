@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://fbi5brba6v7m"]
+[gd_scene load_steps=3 format=3 uid="uid://fbi5brba6v7m"]
 
 [ext_resource type="Script" uid="uid://6tgphk7x871g" path="res://scripts/dungeonGeneration.gd" id="1_4xkuc"]
+[ext_resource type="PackedScene" uid="uid://bib07te5reau7" path="res://scenes/player.tscn" id="3_6nnl1"]
 
 [node name="SachaTestTavu" type="Node2D"]
 script = ExtResource("1_4xkuc")
+
+[node name="Player" parent="." instance=ExtResource("3_6nnl1")]
+position = Vector2(47, -63)
 
 [node name="Camera2D" type="Camera2D" parent="."]
