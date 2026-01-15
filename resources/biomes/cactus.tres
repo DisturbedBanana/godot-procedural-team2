@@ -6,4 +6,4 @@
 resource_name = "Biome"
 script = ExtResource("1_nsyxd")
 name = "Cactus"
-secondaryBiomes = Array[ExtResource("1_nsyxd")]([null])
+type = 1

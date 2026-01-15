@@ -1,42 +1,47 @@
 {
   "origin": [
-    "Can you #objective# #number# #entity##ending#"
+    "Can you [objective:#objective#] [number:#number#] [entity:#entity#] at the [biome:#biome#] [ending:#ending#]"
   ],
+
   "objective": [
-    "kill",
-    "retrieve",
-    "gather",
-    "save",
-    "heal"
+	"kill",
+	"retrieve",
+	"gather",
+	"save",
+    "find"
   ],
   "number": [
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9"
+	"2",
+	"3",
+	"4",
+    "5"
   ],
   "entity": [
-    "dragon",
-    "gryffon",
-    "books",
-    "gold coins",
-    "villager",
-    "sheeps",
-    "Porsche GT2RS",
-    "Simon",
-    "Sacha"
+	"dragon",
+	"gryffon",
+	"books",
+	"gold coins",
+	"villager",
+	"sheeps",
+	"Porsche GT2RS",
+	"Simon",
+	"Sacha",
+	"castle",
+	"treasure room",
+    "shop"
   ],
   "ending": [
-    " please?",
-    ", it would be fantastic.",
-    ", I really need it.",
-    ", it would save me.",
-    ", it would be great.",
+	" please?",
+	", it would be fantastic.",
+	", I really need it.",
+	", it would save me.",
+	", it would be great.",
     " for me?"
+  ],
+  "biome": [
+	"desert",
+	"forest",
+	"oasis",
+    "enchanted forest"
   ]
-}
+} 

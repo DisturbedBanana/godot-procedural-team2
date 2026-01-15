@@ -6,3 +6,4 @@
 resource_name = "Biome"
 script = ExtResource("1_kj8nr")
 name = "Purple plains"
+type = 1
