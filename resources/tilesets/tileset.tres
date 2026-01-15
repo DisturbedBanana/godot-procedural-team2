@@ -1,22 +1,20 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://boei5dbdfnuex"]
+[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://cf4kumw17xr8o"]
 
-[ext_resource type="PackedScene" uid="uid://nmpi1435amt" path="res://scenes/key_collectible.tscn" id="1_k7xku"]
-[ext_resource type="Texture2D" uid="uid://dkkti4sg4v785" path="res://sprites/tilemapfloor.png" id="1_ylhcx"]
-[ext_resource type="PackedScene" uid="uid://dov4nkfsf27hs" path="res://scenes/heart_collectible.tscn" id="2_3xi7r"]
-[ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://scenes/enemy.tscn" id="4_xwwxj"]
-[ext_resource type="PackedScene" uid="uid://cinljgej7owpj" path="res://scenes/spikes.tscn" id="5_n5j7o"]
-[ext_resource type="PackedScene" uid="uid://caqkxr3u45dsp" path="res://scenes/door_closed.tscn" id="6_oiqyd"]
-[ext_resource type="PackedScene" uid="uid://cu3fq7cx5qfjs" path="res://scenes/rdmTileSpikeWall.tscn" id="7_ci8pb"]
+[ext_resource type="PackedScene" uid="uid://nmpi1435amt" path="res://scenes/key_collectible.tscn" id="1_8gkkf"]
+[ext_resource type="PackedScene" uid="uid://dov4nkfsf27hs" path="res://scenes/heart_collectible.tscn" id="2_djbv1"]
+[ext_resource type="Texture2D" uid="uid://c658a1xtilr7n" path="res://sprites/tilemap_packed.png" id="3_8gkkf"]
+[ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://scenes/enemy.tscn" id="4_duc57"]
+[ext_resource type="PackedScene" uid="uid://cinljgej7owpj" path="res://scenes/spikes.tscn" id="5_8rkia"]
+[ext_resource type="PackedScene" uid="uid://caqkxr3u45dsp" path="res://scenes/door_closed.tscn" id="6_7bjng"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1s6bk"]
 resource_name = "Collectibles"
-scenes/1/scene = ExtResource("1_k7xku")
-scenes/2/scene = ExtResource("2_3xi7r")
+scenes/1/scene = ExtResource("1_8gkkf")
+scenes/2/scene = ExtResource("2_djbv1")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qyah5"]
 resource_name = "Placeholder"
-texture = ExtResource("1_ylhcx")
-texture_region_size = Vector2i(32, 32)
+texture = ExtResource("3_8gkkf")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:0/0 = 0
@@ -132,17 +130,33 @@ texture_region_size = Vector2i(32, 32)
 6:7/0 = 0
 6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 7:7/0 = 0
+8:0/0 = 0
+8:1/0 = 0
+8:2/0 = 0
+8:3/0 = 0
+8:4/0 = 0
+8:5/0 = 0
+9:7/0 = 0
+8:7/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+9:5/0 = 0
+9:4/0 = 0
+9:3/0 = 0
+9:2/0 = 0
+9:1/0 = 0
+9:0/0 = 0
+10:3/0 = 0
+11:3/0 = 0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_efedq"]
 resource_name = "Obstacles"
-scenes/1/scene = ExtResource("4_xwwxj")
-scenes/2/scene = ExtResource("5_n5j7o")
-scenes/3/scene = ExtResource("6_oiqyd")
-scenes/4/scene = ExtResource("7_ci8pb")
+scenes/1/scene = ExtResource("4_duc57")
+scenes/2/scene = ExtResource("5_8rkia")
+scenes/3/scene = ExtResource("6_7bjng")
 
 [resource]
 resource_name = "Placeholder"
-tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_qyah5")
 sources/0 = SubResource("TileSetScenesCollectionSource_1s6bk")
