@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://fbi5brba6v7m"]
+
+[ext_resource type="Script" uid="uid://6tgphk7x871g" path="res://scripts/dungeonGeneration.gd" id="1_4xkuc"]
+
+[node name="SachaTestTavu" type="Node2D"]
+script = ExtResource("1_4xkuc")
+
+[node name="Camera2D" type="Camera2D" parent="."]

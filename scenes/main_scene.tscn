@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://db5cfan2a3vjb"]
+[gd_scene load_steps=9 format=3 uid="uid://db5cfan2a3vjb"]
 
+[ext_resource type="Script" uid="uid://6tgphk7x871g" path="res://scripts/dungeonGeneration.gd" id="1_18nlu"]
 [ext_resource type="PackedScene" uid="uid://wx1d3cdd6ci2" path="res://scenes/rooms/room_1.tscn" id="1_fekva"]
 [ext_resource type="PackedScene" uid="uid://bib07te5reau7" path="res://scenes/player.tscn" id="1_qspk8"]
 [ext_resource type="Script" uid="uid://4eq20em80d1w" path="res://scripts/camera_follow.gd" id="2_liovv"]
@@ -11,6 +12,7 @@
 [node name="MainScene" type="Node2D"]
 
 [node name="Dungeon" type="Node2D" parent="."]
+script = ExtResource("1_18nlu")
 
 [node name="Room1" parent="Dungeon" instance=ExtResource("1_fekva")]
 is_start_room = true
