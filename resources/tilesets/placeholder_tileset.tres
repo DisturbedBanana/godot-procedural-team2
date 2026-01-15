@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://boei5dbdfnuex"]
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://boei5dbdfnuex"]
 
 [ext_resource type="PackedScene" uid="uid://nmpi1435amt" path="res://scenes/key_collectible.tscn" id="1_k7xku"]
 [ext_resource type="Texture2D" uid="uid://dkkti4sg4v785" path="res://sprites/tilemapfloor.png" id="1_ylhcx"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://scenes/enemy.tscn" id="4_xwwxj"]
 [ext_resource type="PackedScene" uid="uid://cinljgej7owpj" path="res://scenes/spikes.tscn" id="5_n5j7o"]
 [ext_resource type="PackedScene" uid="uid://caqkxr3u45dsp" path="res://scenes/door_closed.tscn" id="6_oiqyd"]
+[ext_resource type="PackedScene" uid="uid://cu3fq7cx5qfjs" path="res://scenes/rdmTileSpikeWall.tscn" id="7_ci8pb"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1s6bk"]
 resource_name = "Collectibles"
@@ -137,6 +138,7 @@ resource_name = "Obstacles"
 scenes/1/scene = ExtResource("4_xwwxj")
 scenes/2/scene = ExtResource("5_n5j7o")
 scenes/3/scene = ExtResource("6_oiqyd")
+scenes/4/scene = ExtResource("7_ci8pb")
 
 [resource]
 resource_name = "Placeholder"
