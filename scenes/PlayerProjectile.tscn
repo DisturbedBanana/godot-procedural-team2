@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ci76g38v7p0j8"]
 
-[ext_resource type="Script" uid="uid://c54fnamnihcsv" path="res://scenes/player_projectile.gd" id="1_f565f"]
+[ext_resource type="Script" uid="uid://c54fnamnihcsv" path="res://scripts/player_projectile.gd" id="1_f565f"]
 [ext_resource type="Texture2D" uid="uid://cqgy6kfhm1ayx" path="res://Assets/PNG/Tiles/Tiles/tile_0049.png" id="2_37ljf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a3dby"]
