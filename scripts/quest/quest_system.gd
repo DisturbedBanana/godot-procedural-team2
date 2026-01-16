@@ -34,7 +34,4 @@ func _create_new_quest(type : Data.QuestType):
 		data.biome = biome_list.find_biome(_quest_elements.get("biome"))
 		if _quest_elements.get("entity") != null:
 			data.entity = data.dic_entity.get(_quest_elements.get("entity"))
-		if _quest_elements.get("object") != null:
-			data.object = data.dic_object.get(_quest_elements.get("object"))
 		data.text = _quest_text
-		print(data.text)
