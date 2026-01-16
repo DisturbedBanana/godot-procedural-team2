@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BiomeList" load_steps=11 format=3 uid="uid://bdx45rfl4dpwh"]
+
+[ext_resource type="Script" uid="uid://br2lugol7f5ba" path="res://scripts/generation/biome_data.gd" id="1_8ww6k"]
+[ext_resource type="Resource" uid="uid://ukpyamkstapy" path="res://resources/biomes/bayou.tres" id="2_8a5qc"]
+[ext_resource type="Script" uid="uid://c07wljxhmniaf" path="res://scripts/generation/biome_list.gd" id="2_y6oeh"]
+[ext_resource type="Resource" uid="uid://wiqw2ej3s2jx" path="res://resources/biomes/city.tres" id="3_k5xbj"]
+[ext_resource type="Resource" uid="uid://djt5grtkxc62e" path="res://resources/biomes/wood.tres" id="4_ykf4i"]
+[ext_resource type="Resource" uid="uid://8ufl0ugp2pgh" path="res://resources/biomes/desert.tres" id="5_2utxy"]
+[ext_resource type="Resource" uid="uid://cn1a3xtsdhdtr" path="res://resources/biomes/swamp.tres" id="6_k3k1o"]
+[ext_resource type="Resource" uid="uid://cbqrqed23rch8" path="res://resources/biomes/forest.tres" id="7_ss7or"]
+[ext_resource type="Resource" uid="uid://b80qw2yn1t42u" path="res://resources/biomes/ruins.tres" id="8_e606d"]
+[ext_resource type="Resource" uid="uid://csumgwhw2g7t3" path="res://resources/biomes/steppe.tres" id="9_g3n12"]
+
+[resource]
+script = ExtResource("2_y6oeh")
+biomes_list = Array[ExtResource("1_8ww6k")]([ExtResource("2_8a5qc"), ExtResource("3_k5xbj"), ExtResource("5_2utxy"), ExtResource("6_k3k1o"), ExtResource("8_e606d"), ExtResource("9_g3n12"), ExtResource("4_ykf4i"), ExtResource("7_ss7or")])
+metadata/_custom_type_script = "uid://c07wljxhmniaf"

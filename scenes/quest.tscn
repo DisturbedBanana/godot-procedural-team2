@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://3fhix7687uq4"]
+
+[ext_resource type="Script" uid="uid://c07wljxhmniaf" path="res://scripts/generation/biome_list.gd" id="1_y6gx0"]
+
+[node name="Quest" type="Node2D"]
+script = ExtResource("1_y6gx0")
