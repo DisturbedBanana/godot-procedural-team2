@@ -2,14 +2,12 @@ class_name QuestData extends Resource
 
 enum QuestType {Tracassin, Syndicat}
 enum QuestObjective {Kill, Heal, Get}
-enum QuestEntity {Sign, Chest, Lamp, Mouse, Slug, Fox, Mosquito} #temporary
-enum QuestObject {Gun, Rifle, Axe, Medkit, Keys, BlackHole}
+enum QuestEntity {Sign, Chest, Lamp, Mouse, Slug, Fox, Mosquito, Gun, Rifle, Axe, Medkit, Keys, BlackHole} #temporary
 
 var type : QuestType
 var action : QuestObjective
 var number : int
 var entity : QuestEntity
-var object : QuestObject
 var biome : BiomeData
 var text : String
 
@@ -26,17 +24,15 @@ var dic_entity : Dictionary = {
 	"souris" : QuestEntity.Mouse,
 	"limaces" : QuestEntity.Slug,
 	"renards" : QuestEntity.Fox,
-	"moustiques" : QuestEntity.Mosquito
+	"moustiques" : QuestEntity.Mosquito,
+	"caisses de soin" : QuestEntity.Medkit,
+	"clés" : QuestEntity.Keys,
+	"trous noir" : QuestEntity.BlackHole,
+	"pistolets" : QuestEntity.Gun,
+	"fusils" : QuestEntity.Rifle,
+	"haches" : QuestEntity.Axe
 }
 
-var dic_object : Dictionary = {
-	"caisses de soin" : QuestObject.Medkit,
-	"clés" : QuestObject.Keys,
-	"trous noir" : QuestObject.BlackHole,
-	"pistolets" : QuestObject.Gun,
-	"fusils" : QuestObject.Rifle,
-	"haches" : QuestObject.Axe
-}
 
 var dic_biome : Dictionary = {
 	"la foret" : "Forest",
