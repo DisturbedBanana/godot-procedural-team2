@@ -3,7 +3,7 @@ extends Node2D
 
 @export var Rooms:Array[String]
 
-var _loadedRooms:Array
+var _loadedRooms:Array[PackedScene]
 var _BiomeSeparator:Array[int]
 
 var _mapMaxSize = 10
@@ -31,14 +31,10 @@ func _loadAllRoom() -> void:
 	for i in range(_mapMaxSize):
 		_posedRoom.append([]) 
 		for j in range(_mapMaxSize):
-			_posedRoom[i].append(0)
+			_posedRoom[i].append(-1)
 
 	for i in Rooms.size():
-		if(Rooms[i] == "/"):
-			_BiomeSeparator.push_back(i)
-			print(i)
-		else:
-			_loadedRooms.push_back(load(Rooms[i]))
+		_loadedRooms.push_back(load(Rooms[i]))
 
 
 func _generate() -> void:
@@ -52,7 +48,7 @@ func _generate() -> void:
 	(hub as Room).room_pos = walker_pos
 	(hub as Room).doors_states = [0, 0, 0, 0]
 
-	_posedRoom[center][center] = 2
+	_posedRoom[center][center] = 0
 
 	var steps := 25
 	var directions := [
@@ -68,20 +64,32 @@ func _generate() -> void:
 
 		if next_pos.x < 0 or next_pos.y < 0:
 			continue
-		if next_pos.x >= _mapMaxSize or next_pos.y >= _mapMaxSize:
+		if next_pos.x >= _mapMaxSize or next_pos.y >= 	_mapMaxSize:
 			continue
 
-		if _posedRoom[next_pos.x][next_pos.y] != 0:
+		if _posedRoom[next_pos.x][next_pos.y] != -1:
 			walker_pos = next_pos
 			continue
 
-		var room = _loadedRooms.pick_random().instantiate()
+		#need to  select bioms
+		var room:Room = _loadedRooms[randi_range(0,_loadedRooms.size()-1)].instantiate() as Room
 		add_child(room)
 
 		room.position = (next_pos - Vector2i(center, center)) * space
 		#(room as Room).room_pos = next_pos
-		#Need to do doors	
-		#(room as Room).doors_states = [0, 0, 0, 0]
+		#Need to do doors
+		#Midi Ouest Down Tridbord	
+		room.doors_states = [2, 2, 2, 2]
+		match dir:
+			Vector2i.UP:
+				room.doors_states[0] = 0
+			Vector2i.LEFT:
+				room.doors_states[1] = 0
+			Vector2i.DOWN:
+				room.doors_states[2] = 0
+			Vector2i.RIGHT:
+				room.doors_states[3] = 0
+		
 
 		_posedRoom[next_pos.x][next_pos.y] = 1
 		walker_pos = next_pos
