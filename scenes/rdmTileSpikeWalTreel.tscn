@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu3fq7cx5qfjs"]
+[gd_scene load_steps=5 format=3 uid="uid://7dv2nnw4tv4j"]
 
-[ext_resource type="Script" uid="uid://ccoxg0cfhhlw6" path="res://scripts/spikes.gd" id="1_ovsno"]
-[ext_resource type="Texture2D" uid="uid://dkkti4sg4v785" path="res://sprites/tilemapfloor.png" id="2_ll4ud"]
-[ext_resource type="Script" uid="uid://2t5yagqkl3sb" path="res://scripts/rdmTile.gd" id="2_ovsno"]
+[ext_resource type="Texture2D" uid="uid://dkkti4sg4v785" path="res://sprites/tilemapfloor.png" id="1_4haks"]
+[ext_resource type="Script" uid="uid://2t5yagqkl3sb" path="res://scripts/rdmTile.gd" id="2_orv2f"]
+[ext_resource type="Script" uid="uid://ccoxg0cfhhlw6" path="res://scripts/spikes.gd" id="3_egoek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdsvr"]
 size = Vector2(22, 25)
@@ -23,20 +23,20 @@ shape = SubResource("RectangleShape2D_vdsvr")
 
 [node name="Spike" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("2_ll4ud")
+texture = ExtResource("1_4haks")
 region_enabled = true
 region_rect = Rect2(128, 0, 32, 32)
 
 [node name="Wall" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("2_ll4ud")
+texture = ExtResource("1_4haks")
 region_enabled = true
 region_rect = Rect2(192, 128, 32, 32)
 
 [node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("nodeParent", "nodeArea", "nodeBody")]
-script = ExtResource("2_ovsno")
+script = ExtResource("2_orv2f")
 nodeParent = NodePath("..")
-possible_script = Array[Script]([ExtResource("1_ovsno"), null])
+possible_script = Array[Script]([ExtResource("3_egoek"), null])
 isArea = Array[bool]([true, false])
 nodeArea = NodePath("../RandArea2D")
 nodeBody = NodePath("../RandStaticBody2D")
