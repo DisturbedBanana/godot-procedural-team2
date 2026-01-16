@@ -14,3 +14,5 @@ tile_set = ExtResource("2_8b88s")
 [node name="Props" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAFAP3/AgAAAAAAAgAIAPv/AgAAAAAAAgAFAPn/AgAAAAAAAgACAPv/AgAAAAAAAgAGAPr/AgAAAAAAAQAEAPz/AgAAAAAAAQAFAPv/AAAAAAAAAQA=")
 tile_set = ExtResource("2_8b88s")
+
+[connection signal="body_entered" from="Props/KeyCollectible" to="Props/KeyCollectible" method="_on_body_entered"]
