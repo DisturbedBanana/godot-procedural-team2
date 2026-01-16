@@ -28,6 +28,7 @@ func _ready() -> void:
 
 	_room = node
 	_room.doors.push_back(self)
+	
 
 	var room_bounds : Rect2 = _room.get_local_bounds()
 	var ratio : float = room_bounds.size.x / room_bounds.size.y
@@ -39,21 +40,16 @@ func _ready() -> void:
 		orientation = Utils.ORIENTATION.NORTH if dir.y < 0 else Utils.ORIENTATION.SOUTH
 
 	rotation_degrees = Utils.OrientationToAngle(orientation)
-	if closedNode.visible:
-		set_state(STATE.CLOSED)
-	elif openNode.visible:
-		set_state(STATE.OPEN)
-	elif wallSNode.visible:
-		set_state(STATE.WALL)
-	elif wallWNode.visible:
-		set_state(STATE.WALL)
-	elif wallENode.visible:
-		set_state(STATE.WALL)
-	elif wallNNode.visible:
-		set_state(STATE.WALL)		
-	elif secretNode.visible:
-		set_state(STATE.SECRET)
-
+	match orientation:
+		Utils.ORIENTATION.NORTH:
+			set_state(_room.doors_states[0])
+		Utils.ORIENTATION.WEST:
+			set_state(_room.doors_states[1])
+		Utils.ORIENTATION.SOUTH:
+			set_state(_room.doors_states[2])
+		Utils.ORIENTATION.EAST:
+			set_state(_room.doors_states[3])
+	
 
 func try_unlock() -> void:
 	if state != STATE.CLOSED || Player.Instance.key_count <= 0:
@@ -91,15 +87,19 @@ func set_state(new_state : STATE) -> void:
 				Utils.ORIENTATION.NORTH:
 					wallNNode.visible = true
 					collision.set_deferred("disabled", false)
+					print('n')
 				Utils.ORIENTATION.WEST:
 					wallWNode.visible = true
 					collision.set_deferred("disabled", false)
+					print('w')
 				Utils.ORIENTATION.SOUTH:
 					wallSNode.visible = true
 					collision.set_deferred("disabled", false)
+					print('s')
 				Utils.ORIENTATION.EAST:
 					wallENode.visible = true
 					collision.set_deferred("disabled", false)
+					print('e')
 		STATE.SECRET:
 			secretNode.visible = true
 			collision.set_deferred("disabled", true)
