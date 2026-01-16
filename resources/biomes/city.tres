@@ -5,5 +5,5 @@
 [resource]
 resource_name = "Biome"
 script = ExtResource("1_2gn5g")
-name = "Oasis"
+name = "LostCity"
 type = 1

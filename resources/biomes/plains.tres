@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="BiomeData" load_steps=2 format=3 uid="uid://b80qw2yn1t42u"]
-
-[ext_resource type="Script" uid="uid://br2lugol7f5ba" path="res://scripts/generation/biome_data.gd" id="1_nxo6p"]
-
-[resource]
-resource_name = "Biome"
-script = ExtResource("1_nxo6p")
-name = "Plains"
-type = 1

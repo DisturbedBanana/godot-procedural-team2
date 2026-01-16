@@ -1,0 +1,47 @@
+{
+  "origin": [
+    "[traits:#traits#] [quest:#questSyndicat#]"
+  ],
+  "questSyndicat":[
+	"Est ce que tu pourrais [objective:#objectiveSyndicat#] [number:#number#] [entity:#entity#] dans [biome:#biome#] [ending:#endingSyndicat#]"
+  ],
+  "traits":[
+	"[objectiveSyndicat:soigner][entity:#allies#]", "[objectiveSyndicat:récupérer][entity:#objectsSyndicat#]"
+  ],
+	"objectiveSyndicat": [
+	"soigner",
+    "récupérer"
+  ],
+  "objectsSyndicat": [
+	"caisses de soin",
+	"clés",
+    "trous noir"
+  ],
+	"allies": [
+	"panneaux",
+	"coffres",
+    "lampadaires"
+  ],
+	"number": [
+	"2",
+    "3"
+  ],
+	"biome": [
+	"la foret",
+	"le bois oublié",
+	"le désert",
+	"la steppe interdite",
+	"la ruine",
+	"la cité perdue",
+	"le marécage",
+	"le bayou putride"
+  ],
+  "endingSyndicat": [
+	"? Et s'il te plaît ne meurs pas !",
+	"? Tu nous rendrais grandement service !",
+	"? Fais attention à toi.",
+	"? N'oublie pas, on se bat pour nos droits !",
+	"? Tracassin est si fainéant...",
+    "? Aargh, on a tellement de choses à faire..."
+  ]
+}

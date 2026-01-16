@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://s6ah3dc0wqxd" path="res://scenes/rooms/room_3.tscn" id="5_8ykb7"]
 [ext_resource type="PackedScene" uid="uid://d2bd4nrdruls4" path="res://scenes/rooms/room_4.tscn" id="6_jg4hf"]
 [ext_resource type="PackedScene" uid="uid://b20085rng87fk" path="res://scenes/hud.tscn" id="7_i43eg"]
-[ext_resource type="Script" uid="uid://l6hfqwxuoce8" path="res://scripts/quest/quest_load.gd" id="8_18nlu"]
+[ext_resource type="Script" uid="uid://davpd7l47225i" path="res://scripts/quest/quest_system.gd" id="8_18nlu"]
 
 [node name="MainScene" type="Node2D"]
 
