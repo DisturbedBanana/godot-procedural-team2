@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=4 uid="uid://c8mrkca88l0os"]
+[gd_scene load_steps=3 format=4 uid="uid://c8mrkca88l0os"]
 
+[ext_resource type="Script" uid="uid://du4m66ihgjwbx" path="res://scripts/room.gd" id="1_any7l"]
 [ext_resource type="TileSet" uid="uid://cf4kumw17xr8o" path="res://resources/tilesets/tileset.tres" id="1_x3f02"]
 
-[node name="RoomEnzo1" type="Node2D"]
+[node name="RoomEnzo1" type="Node2D" node_paths=PackedStringArray("tilemap_layers")]
+script = ExtResource("1_any7l")
+tilemap_layers = [NodePath("Floor"), NodePath("Props 2")]
 
 [node name="Floor" type="TileMapLayer" parent="."]
 position = Vector2(143, -47)
