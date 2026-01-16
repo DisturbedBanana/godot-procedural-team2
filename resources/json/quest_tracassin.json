@@ -1,0 +1,52 @@
+{
+  "origin": [
+    "[traits:#traits#] [quest:#questTracassin#]"
+  ],
+  "questTracassin":[
+    "Vas [objective:#objectiveTracassin#] [number:#number#] [entity:#entity#] dans [biome:#biome#] [ending:#endingTracassin#]"
+  ],
+  "traits":[
+	"[objectiveTracassin:tuer][entity:#enemies#]", "[objectiveTracassin:récupérer][entity:#objectsTracassin#]"
+  ],
+  "objectiveTracassin": [
+	"tuer",
+    "récupérer"
+  ],
+  "enemies": [
+	"souris",
+	"limaces",
+	"renards",
+    "moustiques"
+  ],
+  "objectsTracassin": [
+	"pistolets",
+	"fusils",
+    "haches"
+  ],
+	"number": [
+	"2",
+	"3",
+	"4",
+    "5"
+  ],
+	"biome": [
+	"la foret",
+	"le bois oublié",
+	"le désert",
+	"la steppe interdite",
+	"la ruine",
+	"la cité perdue",
+	"le marécage",
+	"le bayou putride"
+  ],
+  "endingTracassin": [
+	"... et bouge toi!",
+	", allez du vent.",
+	". Bon hors de ma vue maintenant.",
+	"... pourquoi t'es encore là ?",
+	", vous êtes si fainéant vous les larbins...",
+	". Dégaaaaaaaage de là !!",
+	". Vas tue... mais c'est encore toi ?? Dis au prochain de venir !",
+    ". Vas récup... mais c'est encore toi ?? Dis au prochain de venir !"
+  ]
+}
