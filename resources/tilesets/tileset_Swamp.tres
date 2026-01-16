@@ -1,20 +1,20 @@
-[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://cf4kumw17xr8o"]
+[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://d31s1bmm3fd3f"]
 
-[ext_resource type="PackedScene" uid="uid://nmpi1435amt" path="res://scenes/key_collectible.tscn" id="1_8gkkf"]
-[ext_resource type="PackedScene" uid="uid://dov4nkfsf27hs" path="res://scenes/heart_collectible.tscn" id="2_djbv1"]
-[ext_resource type="Texture2D" uid="uid://c658a1xtilr7n" path="res://sprites/tilemap_packed.png" id="3_8gkkf"]
-[ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://scenes/enemy.tscn" id="4_duc57"]
-[ext_resource type="PackedScene" uid="uid://cinljgej7owpj" path="res://scenes/spikes.tscn" id="5_8rkia"]
-[ext_resource type="PackedScene" uid="uid://caqkxr3u45dsp" path="res://scenes/door_closed.tscn" id="6_7bjng"]
+[ext_resource type="PackedScene" uid="uid://nmpi1435amt" path="res://scenes/key_collectible.tscn" id="1_chwhu"]
+[ext_resource type="PackedScene" uid="uid://dov4nkfsf27hs" path="res://scenes/heart_collectible.tscn" id="2_uvj0g"]
+[ext_resource type="Texture2D" uid="uid://ccn2bkaqrma3x" path="res://sprites/tilemap_Swamp.png" id="3_chwhu"]
+[ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://scenes/enemy.tscn" id="4_1wkhe"]
+[ext_resource type="PackedScene" uid="uid://cinljgej7owpj" path="res://scenes/spikes.tscn" id="5_6hg84"]
+[ext_resource type="PackedScene" uid="uid://caqkxr3u45dsp" path="res://scenes/door_closed.tscn" id="6_7no8w"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1s6bk"]
 resource_name = "Collectibles"
-scenes/1/scene = ExtResource("1_8gkkf")
-scenes/2/scene = ExtResource("2_djbv1")
+scenes/1/scene = ExtResource("1_chwhu")
+scenes/2/scene = ExtResource("2_uvj0g")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qyah5"]
-resource_name = "Placeholder"
-texture = ExtResource("3_8gkkf")
+resource_name = "Environement"
+texture = ExtResource("3_chwhu")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -5.036044, -5.935338, -5.036044, -5.5756207, 8, -8, 8)
 1:0/0 = 0
@@ -32,7 +32,7 @@ texture = ExtResource("3_8gkkf")
 7:0/0 = 0
 7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, 5.5756207, 8, 5.75548, -4.856185, -8, -5.036044)
 0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5.75548, -8, -5.5756207, 8, -8, 8)
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5.75548, -8, -5.6838923, -1.6316643, -5.5756207, 8, -8, 8)
 1:1/0 = 0
 2:1/0 = 0
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.115196, -8, 8, -8, 8, 8, 5.935337, 8)
@@ -66,7 +66,9 @@ texture = ExtResource("3_8gkkf")
 2:3/0 = 0
 2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.3957624, -4.856185, -2.6978807, -8, 3.7770329, -8, 5.036045, -3.7770329, 5.3957615, 5.5756207, 8, 8, -5.5756207, 8)
 4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.5180225, -5.2159023, -3.956892, 0.71943474, -8, 2.8777409, -4.856186, 8, 1.7985878, 6.4749146, 2.877739, 3.2374573, 0, 0.5395775, 5.036045, 0.71943474, 6.115196, -2.877739, 3.5971737, -8)
 5:3/0 = 0
 5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:3/0 = 0
@@ -80,7 +82,9 @@ texture = ExtResource("3_8gkkf")
 2:4/0 = 0
 2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.5756207, 5.935339, -0.17985916, 8, 5.935337, 6.2950554, 8, -8, -8, -8)
 4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.8992939, -2.5180225, -6.4749136, 2.3381634, -5.755479, 8, 0.8992939, 8, 3.956892, -0.17985916, 5.75548, -8, 4.6763268)
 5:4/0 = 0
 5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:4/0 = 0
@@ -295,9 +299,9 @@ texture = ExtResource("3_8gkkf")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_efedq"]
 resource_name = "Obstacles"
-scenes/1/scene = ExtResource("4_duc57")
-scenes/2/scene = ExtResource("5_8rkia")
-scenes/3/scene = ExtResource("6_7bjng")
+scenes/1/scene = ExtResource("4_1wkhe")
+scenes/2/scene = ExtResource("5_6hg84")
+scenes/3/scene = ExtResource("6_7no8w")
 
 [resource]
 resource_name = "Placeholder"
