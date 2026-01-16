@@ -19,6 +19,19 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Procedural"
 
+[file_customization]
+
+folder_colors={
+"res://scenes/room_bayouPutride/": "purple",
+"res://scenes/room_boisOublie/": "green",
+"res://scenes/room_citePerdue/": "gray",
+"res://scenes/room_desert/": "orange",
+"res://scenes/room_forest/": "green",
+"res://scenes/room_marecage/": "purple",
+"res://scenes/room_ruines/": "gray",
+"res://scenes/room_steppeInterdite/": "orange"
+}
+
 [input]
 
 Left={

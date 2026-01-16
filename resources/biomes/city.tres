@@ -5,5 +5,5 @@
 [resource]
 resource_name = "Biome"
 script = ExtResource("1_2gn5g")
-name = "Oasis"
-secondaryBiomes = Array[ExtResource("1_2gn5g")]([null])
+name = "LostCity"
+type = 1

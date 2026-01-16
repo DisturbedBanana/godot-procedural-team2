@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BiomeData" load_steps=3 format=3 uid="uid://cn1a3xtsdhdtr"]
+
+[ext_resource type="Script" uid="uid://br2lugol7f5ba" path="res://scripts/generation/biome_data.gd" id="1_m62nk"]
+[ext_resource type="Resource" uid="uid://ukpyamkstapy" path="res://resources/biomes/bayou.tres" id="2_di21u"]
+
+[resource]
+resource_name = "Biome"
+script = ExtResource("1_m62nk")
+name = "Swamp"
+secondaryBiomes = Array[ExtResource("1_m62nk")]([ExtResource("2_di21u")])
