@@ -1,6 +1,11 @@
 class_name randomTile extends Node2D
+
 @export var nodeParent : Node 
-@export var possible_script:Array[Script]
+@export var possible_script : Array[Script]
+@export var isArea : Array[bool]
+@export var nodeArea : Area2D 
+@export var nodeBody : StaticBody2D 
+
 var possible_tile:Array[Sprite2D]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,10 +14,17 @@ func _ready() -> void:
 	var i=0;
 	for tiles in possible_tile:
 		if tile==i:
-			print(i)
 			tiles.visible=true
-			if possible_script[i]!=null:
-				nodeParent.set_script(possible_script[i])
+			if isArea[i]==true:
+				nodeArea.visible=true
+				if possible_script[i]!=null:
+					nodeArea.set_script(possible_script[i])
+				nodeBody.queue_free()
+			else:
+				nodeBody.visible=true
+				if possible_script[i]!=null:
+					nodeBody.set_script(possible_script[i])
+				nodeArea.queue_free()
 		else:
 			tiles.visible=false
 		i+=1

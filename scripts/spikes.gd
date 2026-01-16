@@ -1,5 +1,9 @@
 extends Area2D
 
+func _init() -> void:
+	if is_connected("body_entered", _on_body_entered)==false:
+		connect("body_entered", _on_body_entered)
+
 
 func _on_body_entered(body:Node2D) -> void:
 	if Player.Instance == null:

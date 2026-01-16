@@ -6,7 +6,7 @@ class_name Room extends Node2D
 # Size of the room in index coordinates. By default : {1,1}.
 @export var room_size : Vector2i = Vector2i.ONE
 @export var tilemap_layers : Array[TileMapLayer]
-
+@export var doors_states: Array[int]
 static var all_rooms : Array[Room]
 
 var doors : Array[Door]
@@ -93,6 +93,11 @@ func get_position_offset(world_point : Vector2) -> Vector2i:
 		offset.y = clampi(int(local_point.y / (bounds.size.y / room_size.y)), 0, room_size.y - 1)
 	return offset
 
+func findByClass(node: Node, className : String, result : Array) -> void:
+	if node.is_class(className) :
+		result.push_back(node)
+	for child in node.get_children():
+		findByClass(child, className, result)
 
 func _exit_tree() -> void:
 	all_rooms.erase(self)

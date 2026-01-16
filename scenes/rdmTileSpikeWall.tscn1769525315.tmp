@@ -9,15 +9,17 @@ size = Vector2(22, 25)
 
 [node name="rdmTileSpikeWall" type="Node2D"]
 
-[node name="RandArea2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RandArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_vdsvr")
 
-[node name="RandStaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RandStaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_vdsvr")
 
@@ -33,10 +35,10 @@ texture = ExtResource("2_ll4ud")
 region_enabled = true
 region_rect = Rect2(192, 128, 32, 32)
 
-[node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("nodeParent", "nodeArea", "nodeBody")]
+[node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("nodeParent")]
 script = ExtResource("2_ovsno")
 nodeParent = NodePath("..")
 possible_script = Array[Script]([ExtResource("1_ovsno"), null])
 isArea = Array[bool]([true, false])
-nodeArea = NodePath("../RandArea2D")
-nodeBody = NodePath("../RandStaticBody2D")
+
+[connection signal="body_entered" from="Area2D" to="Node2D" method="_on_body_entered"]
