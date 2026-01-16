@@ -22,7 +22,8 @@ func _printMap() -> void:
 	for i in range(_mapMaxSize):
 		for j in range(_mapMaxSize):
 			if(i < size && j < size):
-				toPrint += "["+_posedRoom[i][j]+"]"
+				toPrint += "["+str(_posedRoom[i][j])+"]"
+		toPrint += "\n"
 	
 	print(toPrint)
 
@@ -30,7 +31,7 @@ func _loadAllRoom() -> void:
 	for i in range(_mapMaxSize):
 		_posedRoom.append([]) 
 		for j in range(_mapMaxSize):
-			_posedRoom[i].append(j)
+			_posedRoom[i].append(0)
 
 	for i in Rooms.size():
 		if(Rooms[i] == "/"):
@@ -41,19 +42,60 @@ func _loadAllRoom() -> void:
 
 
 func _generate() -> void:
+	var center = _mapMaxSize / 2
+	var walker_pos := Vector2i(center, center)
+	var next_pos := Vector2i(0,0)
 	#HUB
-	var hubCenter = _loadedRooms[0].instantiate()
-	add_child(hubCenter)
-	hubCenter.position = Vector2i(0,0)
-	for i in range(-1,2):
-		for j in range(-1,2):
-			if ((i == 0 && abs(j) == 1) || j == 0 && abs(i) == 1) :
-				var roomNode = _loadedRooms[0].instantiate()
-				add_child(roomNode)
-				roomNode.position = Vector2i(i*space,j*space)
-	pass
-	#Now Random Shit
+	var hub = _loadedRooms[0].instantiate()
+	add_child(hub)
+	hub.position = Vector2i.ZERO
+	(hub as Room).room_pos = walker_pos
+	(hub as Room).doors_states = [0, 0, 0, 0]
+
+	_posedRoom[center][center] = 2
+
+	var steps := 25
+	var directions := [
+		Vector2i.UP,
+		Vector2i.DOWN,
+		Vector2i.LEFT,
+		Vector2i.RIGHT
+	]
+
+	for i in steps:
+		var dir = directions.pick_random()
+		next_pos = walker_pos + dir
+
+		if next_pos.x < 0 or next_pos.y < 0:
+			continue
+		if next_pos.x >= _mapMaxSize or next_pos.y >= _mapMaxSize:
+			continue
+
+		if _posedRoom[next_pos.x][next_pos.y] != 0:
+			walker_pos = next_pos
+			continue
+
+		var room = _loadedRooms.pick_random().instantiate()
+		add_child(room)
+
+		room.position = (next_pos - Vector2i(center, center)) * space
+		#(room as Room).room_pos = next_pos
+		#Need to do doors	
+		#(room as Room).doors_states = [0, 0, 0, 0]
+
+		_posedRoom[next_pos.x][next_pos.y] = 1
+		walker_pos = next_pos
+	_printMap();
+	#for i in range(-1,2):
+		#for j in range(-1,2):
+			#if ((i == 0 && abs(j) == 1) || j == 0 && abs(i) == 1) :
+				#var roomNode = _loadedRooms[0].instantiate()
+				#(roomNode as Room).doors_states = [0,0,0,0]
+				#add_child(roomNode)
+				#roomNode.position = Vector2i(i*space,j*space)
+				
 	
+	#doors_state 0/2 - N O S E 
 	
 
 
