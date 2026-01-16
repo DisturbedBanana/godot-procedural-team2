@@ -5,9 +5,14 @@
 
 [node name="SachaTestTavu" type="Node2D"]
 script = ExtResource("1_4xkuc")
-Rooms = Array[String](["res://scenes/rooms/room_Enzo_1.tscn", "res://scenes/rooms/room_Enzo_2.tscn"])
+BiomsAndRooms = {
+"Forest": ["res://scenes/rooms/room_Enzo_2.tscn", "res://scenes/rooms/room_Enzo_3.tscn"],
+"Item3": ["res://scenes/rooms/room_Patern_1.tscn"],
+"hub": ["res://scenes/rooms/room_Enzo_1.tscn"]
+}
 
 [node name="Player" parent="." instance=ExtResource("3_6nnl1")]
 position = Vector2(47, -63)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.2, 0.2)

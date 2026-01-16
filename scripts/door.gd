@@ -87,19 +87,15 @@ func set_state(new_state : STATE) -> void:
 				Utils.ORIENTATION.NORTH:
 					wallNNode.visible = true
 					collision.set_deferred("disabled", false)
-					print('n')
 				Utils.ORIENTATION.WEST:
 					wallWNode.visible = true
 					collision.set_deferred("disabled", false)
-					print('w')
 				Utils.ORIENTATION.SOUTH:
 					wallSNode.visible = true
 					collision.set_deferred("disabled", false)
-					print('s')
 				Utils.ORIENTATION.EAST:
 					wallENode.visible = true
 					collision.set_deferred("disabled", false)
-					print('e')
 		STATE.SECRET:
 			secretNode.visible = true
 			collision.set_deferred("disabled", true)
