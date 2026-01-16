@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://g8lhx86tvf21"]
+
+[ext_resource type="Script" uid="uid://dwkpys3pn8eie" path="res://scripts/interactable_pnj.gd" id="1_358fw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cubj5"]
+
+[node name="pnj_interaction" type="Area2D"]
+script = ExtResource("1_358fw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cubj5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
