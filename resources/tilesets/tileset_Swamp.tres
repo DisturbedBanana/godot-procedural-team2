@@ -1,11 +1,13 @@
-[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://d31s1bmm3fd3f"]
+[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://d31s1bmm3fd3f"]
 
 [ext_resource type="PackedScene" uid="uid://nmpi1435amt" path="res://scenes/key_collectible.tscn" id="1_chwhu"]
 [ext_resource type="PackedScene" uid="uid://dov4nkfsf27hs" path="res://scenes/heart_collectible.tscn" id="2_uvj0g"]
 [ext_resource type="Texture2D" uid="uid://ccn2bkaqrma3x" path="res://sprites/tilemap_Swamp.png" id="3_chwhu"]
 [ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://scenes/enemy.tscn" id="4_1wkhe"]
 [ext_resource type="PackedScene" uid="uid://cinljgej7owpj" path="res://scenes/spikes.tscn" id="5_6hg84"]
-[ext_resource type="PackedScene" uid="uid://caqkxr3u45dsp" path="res://scenes/door_closed.tscn" id="6_7no8w"]
+[ext_resource type="PackedScene" uid="uid://caqkxr3u45dsp" path="res://scenes/door_left.tscn" id="6_7no8w"]
+[ext_resource type="PackedScene" uid="uid://cu3fq7cx5qfjs" path="res://scenes/rdmTileSpikeWall.tscn" id="7_vnhld"]
+[ext_resource type="PackedScene" uid="uid://b5ogcl6f7n577" path="res://scenes/door_right.tscn" id="8_1wkhe"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1s6bk"]
 resource_name = "Collectibles"
@@ -298,6 +300,8 @@ resource_name = "Obstacles"
 scenes/1/scene = ExtResource("4_1wkhe")
 scenes/2/scene = ExtResource("5_6hg84")
 scenes/3/scene = ExtResource("6_7no8w")
+scenes/4/scene = ExtResource("7_vnhld")
+scenes/5/scene = ExtResource("8_1wkhe")
 
 [resource]
 resource_name = "Placeholder"

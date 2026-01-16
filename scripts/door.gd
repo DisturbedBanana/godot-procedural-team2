@@ -3,10 +3,7 @@ class_name Door extends Node2D
 enum STATE {OPEN = 0, CLOSED = 1, WALL = 2, SECRET = 3}
 @export var closedNode : Node2D
 @export var openNode : Node2D
-@export var wallSNode : Node2D
-@export var wallWNode : Node2D
-@export var wallENode : Node2D
-@export var wallNNode : Node2D
+@export var wallNode : Node2D
 @export var secretNode : Node2D
 
 var orientation : Utils.ORIENTATION
@@ -21,13 +18,14 @@ func _ready() -> void:
 	var node = self
 	while (node != null && !node is Room):
 		node = node.get_parent()
-
+		
 	if node == null:
 		push_error(node == null, "The door is not in any room")
 		return
 
 	_room = node
 	_room.doors.push_back(self)
+	print(_room.doors.size())
 	
 
 	var room_bounds : Rect2 = _room.get_local_bounds()
@@ -38,16 +36,19 @@ func _ready() -> void:
 		orientation = Utils.ORIENTATION.EAST if dir.x > 0 else Utils.ORIENTATION.WEST
 	else:
 		orientation = Utils.ORIENTATION.NORTH if dir.y < 0 else Utils.ORIENTATION.SOUTH
-
+	print("ahh", orientation)
 	rotation_degrees = Utils.OrientationToAngle(orientation)
 	match orientation:
 		Utils.ORIENTATION.NORTH:
 			set_state(_room.doors_states[0])
 		Utils.ORIENTATION.WEST:
+			rotation_degrees=270
 			set_state(_room.doors_states[1])
 		Utils.ORIENTATION.SOUTH:
+			rotation_degrees=180
 			set_state(_room.doors_states[2])
 		Utils.ORIENTATION.EAST:
+			rotation_degrees=90
 			set_state(_room.doors_states[3])
 	
 
@@ -68,10 +69,7 @@ func try_unlock() -> void:
 func set_state(new_state : STATE) -> void:
 	closedNode.visible = false
 	openNode.visible = false
-	wallSNode.visible = false
-	wallENode.visible = false
-	wallWNode.visible = false
-	wallNNode.visible = false
+	wallNode.visible = false
 	secretNode.visible = false
 
 	state = new_state
@@ -83,23 +81,8 @@ func set_state(new_state : STATE) -> void:
 			openNode.visible = true
 			collision.set_deferred("disabled", true)
 		STATE.WALL:
-			match orientation:
-				Utils.ORIENTATION.NORTH:
-					wallNNode.visible = true
-					collision.set_deferred("disabled", false)
-					print('n')
-				Utils.ORIENTATION.WEST:
-					wallWNode.visible = true
-					collision.set_deferred("disabled", false)
-					print('w')
-				Utils.ORIENTATION.SOUTH:
-					wallSNode.visible = true
-					collision.set_deferred("disabled", false)
-					print('s')
-				Utils.ORIENTATION.EAST:
-					wallENode.visible = true
-					collision.set_deferred("disabled", false)
-					print('e')
+			wallNode.visible = true
+			collision.set_deferred("disabled", false)
 		STATE.SECRET:
 			secretNode.visible = true
 			collision.set_deferred("disabled", true)
