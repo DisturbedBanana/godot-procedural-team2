@@ -14,14 +14,12 @@ func _ready() -> void:
 	var i=0;
 	for tiles in possible_tile:
 		if tile==i:
-			print(i)
 			tiles.visible=true
 			if isArea[i]==true:
 				nodeArea.visible=true
 				if possible_script[i]!=null:
 					nodeArea.set_script(possible_script[i])
 				nodeBody.queue_free()
-				print(nodeArea.get_script())	
 			else:
 				nodeBody.visible=true
 				if possible_script[i]!=null:
