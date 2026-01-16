@@ -52,7 +52,7 @@ func _generate() -> void:
 	(hub as Room).is_start_room = true
 	_posedRoom[center][center] = 0
 
-	var steps := 5
+	var steps := 10
 	var directions := [
 		Vector2.UP,
 		Vector2.DOWN,
@@ -74,50 +74,35 @@ func _generate() -> void:
 			walker_pos = next_pos
 			continue
 
-		#need to  select bioms
-		var room:Room = _loadedRooms["Forest"][0].instantiate() as Room
+		#need to  select bioms with their names
+		var room = (_loadedRooms["Forest"][0]).instantiate()
 		add_child(room)
-		(hub as Room).is_start_room = false
+		room.position = (Vector2i(next_pos.x,next_pos.y) - Vector2i(center, center)) * space
 
-		room.position = (next_pos - Vector2(center, center)) * space
-
-		room.doors_states = [2, 2, 2, 2]
-		
 		match -oldDir:
 			Vector2i.UP:
-				room.doors_states[0] = 0
+				(room as Room).doors_states[0] = 0
 			Vector2i.LEFT:
-				room.doors_states[1] = 0
+				(room as Room).doors_states[1] = 0
 			Vector2i.DOWN:
-				room.doors_states[2] = 0
+				(room as Room).doors_states[2] = 0
 			Vector2i.RIGHT:
-				room.doors_states[3] = 0
+				(room as Room).doors_states[3] = 0
 		match dir:
 			Vector2i.UP:
-				room.doors_states[0] = 0
+				(room as Room).doors_states[0] = 0
 			Vector2i.LEFT:
-				room.doors_states[1] = 0
+				(room as Room).doors_states[1] = 0
 			Vector2i.DOWN:
-				room.doors_states[2] = 0
+				(room as Room).doors_states[2] = 0
 			Vector2i.RIGHT:
-				room.doors_states[3] = 0
+				(room as Room).doors_states[3] = 0
 		
 		oldDir = dir;
 
 		_posedRoom[next_pos.x][next_pos.y] = 1
 		walker_pos = next_pos
 	_printMap();
-	#for i in range(-1,2):
-		#for j in range(-1,2):
-			#if ((i == 0 && abs(j) == 1) || j == 0 && abs(i) == 1) :
-				#var roomNode = _loadedRooms[0].instantiate()
-				#(roomNode as Room).doors_states = [0,0,0,0]
-				#add_child(roomNode)
-				#roomNode.position = Vector2i(i*space,j*space)
-				
-	
-	#doors_state 0/2 - N O S E 
-	
 
 
 @warning_ignore("unused_parameter")
