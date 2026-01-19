@@ -75,6 +75,9 @@ func _generate() -> void:
 			continue
 
 		#need to  select bioms with their names
+		#Relaunch the func from the line 64 and gfy 
+		# - and change the biome name to another thing and the zero to random
+		
 		var room = (_loadedRooms["Forest"][0]).instantiate()
 		add_child(room)
 		room.position = (Vector2i(next_pos.x,next_pos.y) - Vector2i(center, center)) * space
@@ -88,6 +91,7 @@ func _generate() -> void:
 				(room as Room).doors_states[2] = 0
 			Vector2i.RIGHT:
 				(room as Room).doors_states[3] = 0
+		(room as Room).set_doors()
 		match dir:
 			Vector2i.UP:
 				(room as Room).doors_states[0] = 0
@@ -97,6 +101,7 @@ func _generate() -> void:
 				(room as Room).doors_states[2] = 0
 			Vector2i.RIGHT:
 				(room as Room).doors_states[3] = 0
+		(room as Room).set_doors()
 		
 		oldDir = dir;
 
