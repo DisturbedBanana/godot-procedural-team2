@@ -7,18 +7,14 @@
 [node name="SachaTestTavu" type="Node2D"]
 script = ExtResource("1_4xkuc")
 BiomsAndRooms = {
-"Forest": ["res://scenes/rooms/Paterne/room_Patern_00.tscn"],
-"Item3": ["res://scenes/rooms/Paterne/room_Patern_00.tscn"],
-"hub": ["res://scenes/rooms/Paterne/room_Patern_50.tscn"]
+"Forest": ["res://scenes/rooms/Paterne/room_Patern_01.tscn"],
+"Item3": ["res://scenes/rooms/Paterne/room_Patern_01.tscn"],
+"hub": ["res://scenes/rooms/Paterne/room_Patern_01.tscn"]
 }
 
 [node name="Player" parent="." instance=ExtResource("3_6nnl1")]
 position = Vector2(47, -63)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.2, 0.2)
-
-[node name="Camera2D2" type="Camera2D" parent="."]
-position = Vector2(175, -145)
-zoom = Vector2(2.25, 2.25)
+zoom = Vector2(0.1, 0.1)
 script = ExtResource("3_php58")

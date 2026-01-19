@@ -10,15 +10,15 @@
 
 [node name="Dungeon" type="Node2D" parent="."]
 script = ExtResource("1_18nlu")
-Rooms = Array[String](["res://scenes/rooms/room_1.tscn", "res://scenes/rooms/room_2.tscn"])
+BiomsAndRooms = {
+"Forest": ["res://scenes/rooms/Paterne/room_Patern_00.tscn"],
+"hub": ["res://scenes/rooms/Paterne/room_Patern_00.tscn"]
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(175, -145)
-zoom = Vector2(2.25, 2.25)
 script = ExtResource("2_liovv")
 
 [node name="Player" parent="." instance=ExtResource("1_qspk8")]
-position = Vector2(47, -63)
 
 [node name="hud" parent="." instance=ExtResource("7_i43eg")]
 

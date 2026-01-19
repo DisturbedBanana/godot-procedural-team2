@@ -91,6 +91,7 @@ func _generate() -> void:
 				(room as Room).doors_states[2] = 0
 			Vector2i.RIGHT:
 				(room as Room).doors_states[3] = 0
+		(room as Room).set_doors()
 		match dir:
 			Vector2i.UP:
 				(room as Room).doors_states[0] = 0
@@ -100,6 +101,7 @@ func _generate() -> void:
 				(room as Room).doors_states[2] = 0
 			Vector2i.RIGHT:
 				(room as Room).doors_states[3] = 0
+		(room as Room).set_doors()
 		
 		oldDir = dir;
 
