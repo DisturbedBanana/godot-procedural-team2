@@ -38,8 +38,6 @@ func _ready() -> void:
 		orientation = Utils.ORIENTATION.NORTH if dir.y < 0 else Utils.ORIENTATION.SOUTH
 	print("ahh", orientation)
 	rotation_degrees = Utils.OrientationToAngle(orientation)
-
-func set_door()->void:
 	match orientation:
 		Utils.ORIENTATION.NORTH:
 			set_state(_room.doors_states[0])

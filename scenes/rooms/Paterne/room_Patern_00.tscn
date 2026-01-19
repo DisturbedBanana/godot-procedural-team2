@@ -4,7 +4,6 @@
 [ext_resource type="TileSet" uid="uid://d31s1bmm3fd3f" path="res://resources/tilesets/tileset_Swamp.tres" id="2_jakcx"]
 
 [node name="RoomEmpty" type="Node2D" node_paths=PackedStringArray("tilemap_layers")]
-position = Vector2(513, 313)
 script = ExtResource("1_jedf5")
 tilemap_layers = [NodePath("Floor"), NodePath("Props 2")]
 doors_states = Array[int]([0, 1, 1, 2])

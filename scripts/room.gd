@@ -13,12 +13,10 @@ var doors : Array[Door]
 
 var _cam : Array[CameraFollow]
 
-
 func _ready() -> void:
-	findByClass(get_parent(),"CameraFollow",_cam)
+	findByClass(get_parent().get_parent(),"CameraFollow",_cam)
 	position=room_pos
-	print(position)
-	doors_states=[0,0,0,0]
+	doors_states=[2,2,2,2]
 	all_rooms.push_back(self)
 	if is_start_room:
 		Player.Instance.enter_room(self)
@@ -61,10 +59,6 @@ func contains(point : Vector2) -> bool:
 func on_enter_room(from : Room) -> void:
 	var camera_bounds = get_world_bounds()
 	_cam[0].set_bounds(camera_bounds)
-
-func set_doors()->void:
-	for door in doors:
-		door.set_door();
 
 func get_adjacent_room(orientation : Utils.ORIENTATION, from : Vector2) -> Room:
 	var dir : Vector2i = Utils.OrientationToDir(orientation)
