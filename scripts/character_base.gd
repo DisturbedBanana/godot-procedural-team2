@@ -45,6 +45,7 @@ var _is_blinking : bool
 var _room #: Room
 
 @onready var main_sprite : Sprite2D = $"BodySprite"
+#@onready var main_sprite : AnimatedSprite2D = $"AnimatedSprite2D"
 
 
 func _process(delta: float) -> void:

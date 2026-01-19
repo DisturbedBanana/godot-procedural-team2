@@ -1,6 +1,10 @@
 class_name Enemy extends CharacterBase
+const Data = preload("res://scripts/quest/quest_data.gd")
+@onready var anim = $AnimatedSprite2D
 
 static var all_enemies : Array[Enemy]
+
+@export var entity_quest_type : Data.QuestEntity
 
 @export var attack_warm_up : float = 0.5
 @export var attack_distance : float = 0.5
@@ -9,6 +13,7 @@ var _state_timer : float = 0.0
 
 
 func _ready() -> void:
+	anim.play("move")
 	all_enemies.push_back(self)
 	for room in Room.all_rooms:
 		if room.contains(global_position):
@@ -45,6 +50,7 @@ func _set_state(state : STATE) -> void:
 		STATE.STUNNED:
 			_current_movement = stunned_movemement
 		STATE.DEAD:
+			
 			_end_blink()
 			queue_free()
 		_:
