@@ -11,6 +11,9 @@ static var Instance : Player
 @export var fire_rate : float = 0.2
 @export var muzzle_offset : Vector2 = Vector2(20, 0)
 
+#Interaction
+var Interactable : InteractableBase = null
+
 # Collectible
 var key_count : int
 
@@ -53,6 +56,12 @@ func _update_inputs() -> void:
 		# Optional: Keep your melee attack if you want both
 		# if Input.is_action_pressed("Attack_Melee"): 
 		#    _attack()
+			
+		if Input.is_action_just_pressed("Interact"):
+			if Interactable == null:
+				return
+			
+			Interactable.on_interact()
 			
 	else:
 		_direction = Vector2.ZERO

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=4 uid="uid://dcoa7fxjvoknw"]
 
 [ext_resource type="Script" uid="uid://du4m66ihgjwbx" path="res://scripts/room.gd" id="1_snk3h"]
-[ext_resource type="TileSet" uid="uid://d31s1bmm3fd3f" path="res://resources/tilesets/tileset_Marécage.tres" id="2_ovo6p"]
+[ext_resource type="TileSet" uid="uid://d31s1bmm3fd3f" path="res://resources/tilesets/tileset_Swamp.tres" id="2_ovo6p"]
 [ext_resource type="TileSet" uid="uid://cf4kumw17xr8o" path="res://resources/tilesets/tileset.tres" id="3_qheia"]
 
 [node name="Roométage" type="Node2D" node_paths=PackedStringArray("tilemap_layers")]

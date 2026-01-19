@@ -1,13 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://fbi5brba6v7m"]
+[gd_scene load_steps=4 format=3 uid="uid://fbi5brba6v7m"]
 
 [ext_resource type="Script" uid="uid://6tgphk7x871g" path="res://scripts/dungeonGeneration.gd" id="1_4xkuc"]
 [ext_resource type="PackedScene" uid="uid://bib07te5reau7" path="res://scenes/player.tscn" id="3_6nnl1"]
+[ext_resource type="Script" uid="uid://4eq20em80d1w" path="res://scripts/camera_follow.gd" id="3_php58"]
 
 [node name="SachaTestTavu" type="Node2D"]
 script = ExtResource("1_4xkuc")
-Rooms = Array[String](["res://scenes/rooms/room_Enzo_1.tscn", "res://scenes/rooms/room_Enzo_2.tscn"])
+BiomsAndRooms = {
+"Forest": ["res://scenes/rooms/Paterne/room_Patern_00.tscn"],
+"Item3": ["res://scenes/rooms/Paterne/room_Patern_00.tscn"],
+"hub": ["res://scenes/rooms/Paterne/room_Patern_50.tscn"]
+}
 
 [node name="Player" parent="." instance=ExtResource("3_6nnl1")]
 position = Vector2(47, -63)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.2, 0.2)
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(175, -145)
+zoom = Vector2(2.25, 2.25)
+script = ExtResource("3_php58")

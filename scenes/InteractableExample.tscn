@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://winnweabjg0o"]
+
+[ext_resource type="Script" uid="uid://6da7h6v0bxlr" path="res://scripts/interactable_example.gd" id="1_2hk6m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2d3xt"]
+
+[node name="InteractableExample" type="Area2D"]
+collision_mask = 9
+script = ExtResource("1_2hk6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2d3xt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

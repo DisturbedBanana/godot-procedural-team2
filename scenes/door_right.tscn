@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5ogcl6f7n577"]
+
+[ext_resource type="Script" uid="uid://cqdxgioetciqb" path="res://scripts/door.gd" id="1_ehkvc"]
+[ext_resource type="Texture2D" uid="uid://c658a1xtilr7n" path="res://sprites/tilemap_packed.png" id="2_g6d5q"]
+[ext_resource type="Texture2D" uid="uid://dkkti4sg4v785" path="res://sprites/tilemapfloor.png" id="3_v1tcc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_470b0"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3msj"]
+size = Vector2(16, 16)
+
+[node name="Door" type="StaticBody2D" node_paths=PackedStringArray("closedNode", "openNode", "wallNode", "secretNode")]
+script = ExtResource("1_ehkvc")
+closedNode = NodePath("Closed")
+openNode = NodePath("Open")
+wallNode = NodePath("Wall")
+secretNode = NodePath("Secret")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_470b0")
+
+[node name="Open" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_g6d5q")
+region_enabled = true
+region_rect = Rect2(80, 160, 16, 16)
+
+[node name="Closed" type="Sprite2D" parent="."]
+texture = ExtResource("2_g6d5q")
+region_enabled = true
+region_rect = Rect2(80, 128, 16, 16)
+
+[node name="Secret" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_v1tcc")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Wall" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_g6d5q")
+region_enabled = true
+region_rect = Rect2(208, 32, 16, 16)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_j3msj")
+debug_color = Color(0, 0, 0, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
