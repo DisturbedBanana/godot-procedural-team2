@@ -5,7 +5,7 @@ var currentRoom: Room
 @export var BiomNameListInOrder:Array[String]
 var _loadedRooms = {}
 
-var _mapMaxSize = 10.0
+var _mapMaxSize = 100.0
 var _posedRoom:Array[Array]
 
 
@@ -127,15 +127,23 @@ func _generate() -> void:
 					currentRoom.doors_states[3] = 0
 			print((room as Room).doors_states)
 			_posedRoom[next_pos.x][next_pos.y] = 1
-			walker_pos = next_pos
-			currentRoom=(room as Room)
 			dir = directions.pick_random()
-			if biome=="Forest" and dir==Vector2.UP:
-				dir = Vector2.DOWN
-			elif biome=="Swamp"and dir==Vector2.LEFT:
-				dir = Vector2.RIGHT		
-			elif biome=="Ruin"and dir==Vector2.DOWN:
-				dir = Vector2.UP	
+			if biome=="Forest" :
+				ForestRooms.append((room as Room))				
+				currentRoom=ForestRooms[randi_range(0,ForestRooms.size()-1)]
+				if dir==Vector2.UP:
+					dir = Vector2.DOWN
+			elif biome=="Swamp": 
+				SwampRooms.append((room as Room))
+				currentRoom=SwampRooms[randi_range(0,SwampRooms.size()-1)]
+				if dir==Vector2.LEFT:
+					dir = Vector2.RIGHT		
+			elif biome=="Ruin":
+				RuinRooms.append((room as Room))
+				currentRoom=SwampRooms[randi_range(0,SwampRooms.size()-1)]
+				if dir==Vector2.DOWN:
+					dir = Vector2.UP	
+			walker_pos=currentRoom.room_pos
 	_printMap();
 
 

@@ -29,8 +29,8 @@ BiomsAndRooms = {
 BiomNameListInOrder = Array[String](["Forest", "LostWoods", "Desert1", "Steppe1", "Swamp", "Bayou", "Desert2", "Steppe2", "Ruin", "LostCity", "Desert3", "Steppe3"])
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(192.71, 1339.905)
-zoom = Vector2(0.075, 0.075)
+offset = Vector2(951.71, 653)
+zoom = Vector2(0.17, 0.17)
 script = ExtResource("2_liovv")
 
 [node name="Player" parent="." instance=ExtResource("1_qspk8")]
