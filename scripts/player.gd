@@ -1,5 +1,6 @@
 class_name Player extends CharacterBase
 
+@onready var quest_sys = $"QuestSystem"
 static var Instance : Player
 
 @export_group("Input")

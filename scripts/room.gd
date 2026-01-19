@@ -8,7 +8,7 @@ class_name Room extends Node2D
 @export var tilemap_layers : Array[TileMapLayer]
 @export var doors_states: Array[int]
 static var all_rooms : Array[Room]
-@export var biome:int
+@export var biome:BiomeData
 var doors : Array[Door]
 
 var _cam : Array[CameraFollow]
@@ -24,13 +24,32 @@ func _ready() -> void:
 		Player.Instance.enter_room(self)
 	print(biome)
 	for layer in tilemap_layers:
-		match biome:
-			0:
+		match biome.name:
+			"Bayou":
 				layer.tile_set=load("res://resources/tilesets/tileset.tres")
 				break
-			1:
+			"LostCity":
 				layer.tile_set=load("res://resources/tilesets/placeholder_tileset.tres")
 				break
+			"Desert":
+				layer.tile_set=load("res://resources/tilesets/placeholder_tileset.tres")
+				break
+			"Forest":
+				layer.tile_set=load("res://resources/tilesets/placeholder_tileset.tres")
+				break
+			"Ruins":
+				layer.tile_set=load("res://resources/tilesets/placeholder_tileset.tres")
+				break
+			"Steppe":
+				layer.tile_set=load("res://resources/tilesets/placeholder_tileset.tres")
+				break
+			"Swamp":
+				layer.tile_set=load("res://resources/tilesets/placeholder_tileset.tres")
+				break
+			"ForgottenWood":
+				layer.tile_set=load("res://resources/tilesets/placeholder_tileset.tres")
+				break
+			
 
 
 func get_local_bounds() -> Rect2:

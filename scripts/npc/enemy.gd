@@ -11,13 +11,16 @@ static var all_enemies : Array[Enemy]
 
 var _state_timer : float = 0.0
 
+var _current_biome : BiomeData
+
 
 func _ready() -> void:
-	anim.play("move")
+	anim.play("idle")
 	all_enemies.push_back(self)
 	for room in Room.all_rooms:
 		if room.contains(global_position):
 			_room = room
+			_current_biome = _room.biome
 			break
 	_set_state(STATE.IDLE)
 
@@ -37,8 +40,10 @@ func update_AI() -> void:
 		if enemy_to_player.length() < attack_distance:
 			_attack()
 		else:
+			anim.play("walk")
 			_direction = enemy_to_player.normalized()
 	else:
+		anim.play("idle")
 		_direction = Vector2.ZERO
 
 
@@ -48,15 +53,17 @@ func _set_state(state : STATE) -> void:
 
 	match _state:
 		STATE.STUNNED:
+			anim.play("idle")
 			_current_movement = stunned_movemement
 		STATE.DEAD:
-			
+			anim.play("death")
 			_end_blink()
 			queue_free()
 		_:
 			_current_movement = default_movement
 
 	if !_can_move():
+		anim.play("idle")
 		_direction = Vector2.ZERO
 
 
