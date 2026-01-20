@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 	
 	# 1. ROTATION LOGIC
 	# Faces the mouse cursor
-	#look_at(get_global_mouse_position())
+	look_at(get_global_mouse_position())
 	
 	# Update Timers
 	if _shoot_timer > 0:
