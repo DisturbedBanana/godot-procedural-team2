@@ -1,7 +1,7 @@
 class_name DungeonGenerator extends Node2D
 
 var currentRoom: Room
-@export var BiomsAndRooms = {"hub":["res://scenes/rooms/room_Enzo_1.tscn"],"Forest" : []}
+@export var BiomsAndRooms:Dictionary = {}
 @export var BiomNameListInOrder:Array[String]
 var _loadedRooms = {}
 
@@ -9,7 +9,7 @@ var _mapMaxSize = 100.0
 var _posedRoom:Array[Array]
 
 
-var space = 32*16; # 16 is the number of tile SPACE IS ROOM SIZE DEPENDENT /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\
+var space = 32*8; # 16 is the number of tile SPACE IS ROOM SIZE DEPENDENT /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\
 
 var ForestRooms:Array[Room]
 var RuinRooms:Array[Room]
@@ -204,7 +204,9 @@ func _generate() -> void:
 				if j>10:
 					break
 			var room = (_loadedRooms[biome][0]).instantiate()
+			room.position = (Vector2i(next_pos.x,next_pos.y) - Vector2i(center, center)) * space
 			(room as Room).room_pos=next_pos
+			print(next_pos)
 			add_child(room)
 			match -dir:
 				Vector2.UP:

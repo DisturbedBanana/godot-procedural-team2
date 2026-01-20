@@ -16,9 +16,6 @@ var _cam : Array[CameraFollow]
 func _ready() -> void:
 
 	findByClass(get_parent().get_parent(),"CameraFollow",_cam)
-	position=room_pos
-	print(position)
-	print(room_size)
 	doors_states=[2,2,2,2]
 	all_rooms.push_back(self)
 	if is_start_room:
