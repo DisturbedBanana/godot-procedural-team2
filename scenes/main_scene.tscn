@@ -14,7 +14,7 @@ script = ExtResource("1_18nlu")
 BiomsAndRooms = {
 "Bayou": ["res://scenes/rooms/Paterne/room_Patern_05.tscn"],
 "Desert1": ["res://scenes/rooms/Paterne/room_Patern_50.tscn"],
-"Desert2": ["res://scenes/rooms/Paterne/room_Patern_40.tscn"],
+"Desert2": ["res://scenes/rooms/Paterne/room_Patern_50.tscn"],
 "Desert3": ["res://scenes/rooms/Paterne/room_Patern_50.tscn"],
 "Forest": ["res://scenes/rooms/Paterne/room_Patern_01.tscn"],
 "LostCity": ["res://scenes/rooms/Paterne/room_Patern_05.tscn"],
@@ -29,8 +29,7 @@ BiomsAndRooms = {
 BiomNameListInOrder = Array[String](["Forest", "LostWoods", "Desert1", "Steppe1", "Swamp", "Bayou", "Desert2", "Steppe2", "Ruin", "LostCity", "Desert3", "Steppe3"])
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(951.71, 653)
-zoom = Vector2(0.17, 0.17)
+zoom = Vector2(2.91, 2.91)
 script = ExtResource("2_liovv")
 
 [node name="Player" parent="." instance=ExtResource("1_qspk8")]
