@@ -12,15 +12,15 @@
 [node name="Dungeon" type="Node2D" parent="."]
 script = ExtResource("1_18nlu")
 BiomsAndRooms = {
-"Bayou": ["res://scenes/rooms/Paterne/room_Patern_05.tscn"],
-"Desert1": ["res://scenes/rooms/Paterne/room_Patern_50.tscn"],
-"Desert2": ["res://scenes/rooms/Paterne/room_Patern_50.tscn"],
-"Desert3": ["res://scenes/rooms/Paterne/room_Patern_50.tscn"],
-"Forest": ["res://scenes/rooms/Paterne/room_Patern_01.tscn"],
-"LostCity": ["res://scenes/rooms/Paterne/room_Patern_05.tscn"],
-"LostWoods": ["res://scenes/rooms/Paterne/room_Patern_03.tscn"],
-"Ruin": ["res://scenes/rooms/Paterne/room_Patern_02.tscn"],
-"Steppe1": ["res://scenes/rooms/Paterne/room_Patern_51.tscn"],
+"Bayou": ["res://scenes/rooms/Paterne/room_Patern_00.tscn"],
+"Desert1": ["res://scenes/rooms/Paterne/room_Patern_00.tscn"],
+"Desert2": ["res://scenes/rooms/Paterne/room_Patern_00.tscn"],
+"Desert3": ["res://scenes/rooms/Paterne/room_Patern_00.tscn"],
+"Forest": ["res://scenes/rooms/Paterne/room_Patern_00.tscn"],
+"LostCity": ["res://scenes/rooms/Paterne/room_Patern_00.tscn"],
+"LostWoods": ["res://scenes/rooms/Paterne/room_Patern_00.tscn"],
+"Ruin": ["res://scenes/rooms/Paterne/room_Patern_00.tscn"],
+"Steppe1": ["res://scenes/rooms/Paterne/room_Patern_00.tscn"],
 "Steppe2": ["res://scenes/rooms/Paterne/room_Patern_51.tscn"],
 "Steppe3": ["res://scenes/rooms/Paterne/room_Patern_51.tscn"],
 "Swamp": ["res://scenes/rooms/Paterne/room_Patern_04.tscn"],
@@ -29,8 +29,7 @@ BiomsAndRooms = {
 BiomNameListInOrder = Array[String](["Forest", "LostWoods", "Desert1", "Steppe1", "Swamp", "Bayou", "Desert2", "Steppe2", "Ruin", "LostCity", "Desert3", "Steppe3"])
 
 [node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2(-2, -2)
-zoom = Vector2(0.77, 0.77)
+zoom = Vector2(0.16, 0.16)
 script = ExtResource("2_liovv")
 
 [node name="Player" parent="." instance=ExtResource("1_qspk8")]

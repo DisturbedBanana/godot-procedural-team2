@@ -11,18 +11,42 @@ static var all_rooms : Array[Room]
 @export var biome:String
 var doors : Array[Door]
 
-var _cam : Array[CameraFollow]
+@onready var _cam : CameraFollow = $/root/MainScene/Camera2D
 
-func _ready() -> void:
-
-	findByClass(get_parent().get_parent(),"CameraFollow",_cam)
+func onReady() -> void:
 	doors_states=[2,2,2,2]
 	all_rooms.push_back(self)
-	if is_start_room:
-		Player.Instance.enter_room(self)
+	#if is_start_room==true:
+		#Player.Instance.enter_room(self)
 	print(biome)
-	
-
+	for layer in tilemap_layers:
+		match biome:
+			"hub":
+				layer.tile_set=load("res://resources/tilesets/tileset_Foret.tres")
+			"Forest":
+				layer.tile_set=load("res://resources/tilesets/tileset_Foret.tres")
+			"Swamp":
+				layer.tile_set=load("res://resources/tilesets/tileset_Desert.tres")
+			"Ruin":
+				layer.tile_set=load("res://resources/tilesets/Ruines.tres")
+			"LostWoods":
+				layer.tile_set=load("res://resources/tilesets/BoisOublie.tres")
+			"Bayou":
+				layer.tile_set=load("res://resources/tilesets/tileset_BayouPutride.tres")
+			"LostCity":
+				layer.tile_set=load("res://resources/tilesets/tileset_CitePerdue.tres")
+			"Desert1" :
+				layer.tile_set=load("res://resources/tilesets/tileset_Desert.tres")
+			"Desert2":
+				layer.tile_set=load("res://resources/tilesets/tileset_Desert.tres")
+			"Desert3":
+				layer.tile_set=load("res://resources/tilesets/tileset_Desert.tres")
+			"Steppe1":
+				layer.tile_set=load("res://resources/tilesets/tileset_SteppeInterdite.tres")
+			"Steppe2":
+				layer.tile_set=load("res://resources/tilesets/tileset_SteppeInterdite.tres")
+			"Steppe3":
+				layer.tile_set=load("res://resources/tilesets/tileset_SteppeInterdite.tres")
 
 func get_local_bounds() -> Rect2:
 	var room_bounds = Rect2()
@@ -51,7 +75,7 @@ func contains(point : Vector2) -> bool:
 
 func on_enter_room(from : Room) -> void:
 	var camera_bounds = get_world_bounds()
-	_cam[0].set_bounds(camera_bounds)
+	_cam.set_bounds(camera_bounds)
 
 func get_adjacent_room(orientation : Utils.ORIENTATION, from : Vector2) -> Room:
 	var dir : Vector2i = Utils.OrientationToDir(orientation)
