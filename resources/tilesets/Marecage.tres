@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=23 format=3 uid="uid://cm2alqthfp3r1"]
+[gd_resource type="TileSet" load_steps=24 format=3 uid="uid://cm2alqthfp3r1"]
 
 [ext_resource type="PackedScene" uid="uid://nmpi1435amt" path="res://scenes/key_collectible.tscn" id="1_rjsaj"]
 [ext_resource type="PackedScene" uid="uid://dov4nkfsf27hs" path="res://scenes/heart_collectible.tscn" id="2_m32bm"]
@@ -8,10 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://caqkxr3u45dsp" path="res://scenes/door_left.tscn" id="6_xf85v"]
 [ext_resource type="PackedScene" uid="uid://cu3fq7cx5qfjs" path="res://scenes/rdmTileSpikeWall.tscn" id="7_1qp5m"]
 [ext_resource type="PackedScene" uid="uid://b5ogcl6f7n577" path="res://scenes/door_right.tscn" id="8_mimge"]
-[ext_resource type="PackedScene" path="res://scenes/collecSpawn.tscn" id="9_2c0x7"]
-[ext_resource type="PackedScene" path="res://scenes/heartSpawn.tscn" id="10_rclxl"]
-[ext_resource type="PackedScene" path="res://scenes/keySpawn.tscn" id="11_hcob0"]
+[ext_resource type="PackedScene" uid="uid://deg5n4mnuxijq" path="res://scenes/collecSpawn.tscn" id="9_2c0x7"]
+[ext_resource type="PackedScene" uid="uid://b7dtoumn63bb5" path="res://scenes/heartSpawn.tscn" id="10_rclxl"]
+[ext_resource type="PackedScene" uid="uid://dhnng1vedqw7m" path="res://scenes/keySpawn.tscn" id="11_hcob0"]
 [ext_resource type="PackedScene" uid="uid://80nteilrs5cr" path="res://scenes/npc/aida.tscn" id="12_4rkex"]
+[ext_resource type="PackedScene" uid="uid://cvvvadn1pv8l2" path="res://scenes/enemySpawn.tscn" id="12_m32bm"]
 [ext_resource type="PackedScene" uid="uid://ii8y312rhp87" path="res://scenes/npc/chestvrart.tscn" id="13_etqxu"]
 [ext_resource type="PackedScene" uid="uid://b32vc1h4u585b" path="res://scenes/npc/diana.tscn" id="14_lyh4j"]
 [ext_resource type="PackedScene" uid="uid://c5f8724mypoly" path="res://scenes/npc/karim.tscn" id="15_w1rha"]
@@ -319,6 +320,7 @@ scenes/5/scene = ExtResource("8_mimge")
 scenes/6/scene = ExtResource("9_2c0x7")
 scenes/7/scene = ExtResource("10_rclxl")
 scenes/8/scene = ExtResource("11_hcob0")
+scenes/9/scene = ExtResource("12_m32bm")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_2wtjw"]
 resource_name = "PNJ"

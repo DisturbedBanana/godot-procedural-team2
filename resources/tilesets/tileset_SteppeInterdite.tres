@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=23 format=3 uid="uid://c0drxuijld7q6"]
+[gd_resource type="TileSet" load_steps=24 format=3 uid="uid://c0drxuijld7q6"]
 
 [ext_resource type="PackedScene" uid="uid://nmpi1435amt" path="res://scenes/key_collectible.tscn" id="1_etsfe"]
 [ext_resource type="PackedScene" uid="uid://dov4nkfsf27hs" path="res://scenes/heart_collectible.tscn" id="2_f3iwb"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://deg5n4mnuxijq" path="res://scenes/collecSpawn.tscn" id="9_f3iwb"]
 [ext_resource type="PackedScene" uid="uid://b7dtoumn63bb5" path="res://scenes/heartSpawn.tscn" id="11_wb6m6"]
 [ext_resource type="PackedScene" uid="uid://c5f8724mypoly" path="res://scenes/npc/karim.tscn" id="12_f1k7a"]
+[ext_resource type="PackedScene" uid="uid://cvvvadn1pv8l2" path="res://scenes/enemySpawn.tscn" id="12_mpg4k"]
 [ext_resource type="PackedScene" uid="uid://80nteilrs5cr" path="res://scenes/npc/aida.tscn" id="13_mpg4k"]
 [ext_resource type="PackedScene" uid="uid://ii8y312rhp87" path="res://scenes/npc/chestvrart.tscn" id="14_nga50"]
 [ext_resource type="PackedScene" uid="uid://b32vc1h4u585b" path="res://scenes/npc/diana.tscn" id="15_qdqj2"]
@@ -319,8 +320,7 @@ scenes/5/scene = ExtResource("8_2v017")
 scenes/6/scene = ExtResource("9_f3iwb")
 scenes/7/scene = ExtResource("11_wb6m6")
 scenes/8/scene = ExtResource("5_1g7og")
-scenes/9/scene = ExtResource("11_wb6m6")
-scenes/10/scene = ExtResource("5_1g7og")
+scenes/9/scene = ExtResource("12_mpg4k")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_n152q"]
 resource_name = "PNJ"

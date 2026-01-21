@@ -4,4 +4,5 @@
 
 [node name="collecSpawner2" type="Area2D"]
 script = ExtResource("1_tsuiu")
-spawnChance = Array[int]([100, 0])
+keyChance = 100
+heartChance = -1

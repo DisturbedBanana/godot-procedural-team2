@@ -1,9 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://deg5n4mnuxijq"]
+[gd_scene load_steps=2 format=3 uid="uid://deg5n4mnuxijq"]
 
 [ext_resource type="Script" uid="uid://by44i0srfyj5y" path="res://scripts/generation/collectible_spawn.gd" id="1_cfhf8"]
-[ext_resource type="Script" uid="uid://dey2uhlrw5yk3" path="res://scripts/collectible_base.gd" id="2_ltnoq"]
 
 [node name="collecSpawner" type="Area2D"]
 script = ExtResource("1_cfhf8")
-spawnChance = Array[int]([33, 80])
-collec = Array[ExtResource("2_ltnoq")]([null])
+keyChance = 33
+heartChance = 66
