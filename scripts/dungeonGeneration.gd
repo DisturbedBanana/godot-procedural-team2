@@ -207,12 +207,13 @@ func _generate() -> void:
 				next_pos = walker_pos + dir
 				if j>10:
 					break
-			var room = (_loadedRooms[biome][0]).instantiate()
+			var randRoom=randi_range(0,_loadedRooms[biome].size()-1)
+			print(_loadedRooms[biome].size(), randRoom)
+			var room = (_loadedRooms[biome][randRoom]).instantiate()
 			room.position = (Vector2i(next_pos.x,next_pos.y) - Vector2i(center, center)) * space
 			(room as Room).room_pos=next_pos
 			(room as Room).biome=biome
 			(room as Room).onReady()
-			print(next_pos)
 			add_child(room)
 			match -dir:
 				Vector2.UP:

@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://bvixspqkljjl5"]
+
+[ext_resource type="Script" uid="uid://b5df80s50tpg6" path="res://scripts/npc/enemy.gd" id="1_rxb1h"]
+[ext_resource type="Resource" uid="uid://4wrtqv1kgm5c" path="res://resources/enemy_default_movement.tres" id="2_ad2yb"]
+[ext_resource type="Resource" uid="uid://cxk1f1srqi8ot" path="res://resources/enemy_stunned_movement.tres" id="3_gjyoe"]
+[ext_resource type="PackedScene" uid="uid://imvv20oldcd0" path="res://scenes/enemy_attack.tscn" id="4_hahhd"]
+[ext_resource type="Texture2D" uid="uid://bs5u3olircbn3" path="res://Assets/PNG/Enemies/Tiles/BoisOubliéDead.png" id="5_44vgl"]
+[ext_resource type="Texture2D" uid="uid://ce3em1loilxg3" path="res://Assets/PNG/Enemies/Tiles/BoisOublié1.png" id="6_pt7ve"]
+[ext_resource type="Texture2D" uid="uid://cng00c7f1n77" path="res://Assets/PNG/Enemies/Tiles/BoisOublié2.png" id="7_n71pd"]
+[ext_resource type="Texture2D" uid="uid://dk5agodjjc538" path="res://Assets/PNG/Enemies/Tiles/BoisOublié3.png" id="8_5mvcf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p1d5c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bx457"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_44vgl")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_pt7ve")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_n71pd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5mvcf")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
+collision_mask = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_rxb1h")
+entity_quest_type = 7
+attack_distance = 35.0
+sprites = [null, null]
+default_movement = ExtResource("2_ad2yb")
+stunned_movemement = ExtResource("3_gjyoe")
+attack_scene = ExtResource("4_hahhd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p1d5c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bx457")
+animation = &"death"

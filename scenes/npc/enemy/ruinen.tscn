@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://cqgre33inp28s"]
+
+[ext_resource type="Script" uid="uid://b5df80s50tpg6" path="res://scripts/npc/enemy.gd" id="1_0q3sc"]
+[ext_resource type="Resource" uid="uid://4wrtqv1kgm5c" path="res://resources/enemy_default_movement.tres" id="2_852j7"]
+[ext_resource type="Resource" uid="uid://cxk1f1srqi8ot" path="res://resources/enemy_stunned_movement.tres" id="3_sir6p"]
+[ext_resource type="PackedScene" uid="uid://imvv20oldcd0" path="res://scenes/enemy_attack.tscn" id="4_4kymf"]
+[ext_resource type="Texture2D" uid="uid://c8x0oeamull2l" path="res://Assets/PNG/Enemies/Tiles/RuinsDead.png" id="5_0q3sc"]
+[ext_resource type="Texture2D" uid="uid://bf7ek8rqhvr8v" path="res://Assets/PNG/Enemies/Tiles/Ruins1.png" id="6_852j7"]
+[ext_resource type="Texture2D" uid="uid://bcb81m5y08bk6" path="res://Assets/PNG/Enemies/Tiles/Ruins2.png" id="7_sir6p"]
+[ext_resource type="Texture2D" uid="uid://sronwx65mjn6" path="res://Assets/PNG/Enemies/Tiles/Ruins3.png" id="8_4kymf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p1d5c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pg8qt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0q3sc")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_852j7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_sir6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4kymf")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
+collision_mask = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_0q3sc")
+entity_quest_type = 3
+attack_distance = 35.0
+sprites = [null, null]
+default_movement = ExtResource("2_852j7")
+stunned_movemement = ExtResource("3_sir6p")
+attack_scene = ExtResource("4_4kymf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p1d5c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pg8qt")
+animation = &"walk"

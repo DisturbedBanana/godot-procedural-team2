@@ -44,8 +44,8 @@ var _is_blinking : bool
 # Dungeon position
 var _room : Room
 
-@onready var main_sprite : Sprite2D = $"BodySprite"
-#@onready var main_sprite : AnimatedSprite2D = $"AnimatedSprite2D"
+#@onready var main_sprite : Sprite2D = $"BodySprite"
+@onready var main_sprite : AnimatedSprite2D = $"AnimatedSprite2D"
 
 
 func _process(delta: float) -> void:
@@ -106,6 +106,7 @@ func apply_knockback(duration : float, velocity : Vector2) -> void:
 
 
 func _set_state(state : STATE) -> void:
+	print(state)
 	_state = state
 
 
@@ -136,8 +137,9 @@ func _end_blink() -> void:
 
 
 func _set_color(color : Color) -> void:
-	for sprite in sprites:
-		sprite.modulate = color
+	#for sprite in sprites:
+		#sprite.modulate = color
+	return
 
 
 func _compute_orientation_angle(direction : Vector2) -> float:
