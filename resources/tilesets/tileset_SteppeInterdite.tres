@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://caqkxr3u45dsp" path="res://scenes/door_left.tscn" id="6_r7jki"]
 [ext_resource type="PackedScene" uid="uid://cu3fq7cx5qfjs" path="res://scenes/rdmTileSpikeWall.tscn" id="7_1pau4"]
 [ext_resource type="PackedScene" uid="uid://b5ogcl6f7n577" path="res://scenes/door_right.tscn" id="8_2v017"]
-[ext_resource type="PackedScene" uid="uid://deg5n4mnuxijq" path="res://scenes/collecSpawn.tscn" id="9_f3iwb"]
+[ext_resource type="PackedScene" path="res://scenes/collecSpawn.tscn" id="9_f3iwb"]
 [ext_resource type="PackedScene" uid="uid://b7dtoumn63bb5" path="res://scenes/heartSpawn.tscn" id="11_wb6m6"]
 [ext_resource type="PackedScene" uid="uid://c5f8724mypoly" path="res://scenes/npc/karim.tscn" id="12_f1k7a"]
 [ext_resource type="PackedScene" uid="uid://80nteilrs5cr" path="res://scenes/npc/aida.tscn" id="13_mpg4k"]

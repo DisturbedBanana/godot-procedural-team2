@@ -20,11 +20,10 @@ func _setup() -> void:
 			bubble_text.change_state(BubbleText.State.NewQuest)
 			has_to_give_quest = true
 		else:
-			return
+			can_say_dialog()
 	else:
 		
-		bubble_text.change_state(BubbleText.State.Dialog)
-		has_to_talk = true
+		can_say_dialog()
 	
 func can_say_dialog():
 	var rand_number = randi() % 100
