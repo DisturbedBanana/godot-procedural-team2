@@ -1,13 +1,16 @@
-[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://c0drxuijld7q6"]
+[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://c0drxuijld7q6"]
 
 [ext_resource type="PackedScene" uid="uid://nmpi1435amt" path="res://scenes/key_collectible.tscn" id="1_etsfe"]
 [ext_resource type="PackedScene" uid="uid://dov4nkfsf27hs" path="res://scenes/heart_collectible.tscn" id="2_f3iwb"]
 [ext_resource type="Texture2D" uid="uid://b68uyk1e04xqy" path="res://sprites/Biome_Far2.png" id="3_etsfe"]
 [ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://scenes/npc/enemy.tscn" id="4_1g7og"]
+[ext_resource type="PackedScene" uid="uid://dhnng1vedqw7m" path="res://scenes/keySpawn.tscn" id="5_1g7og"]
 [ext_resource type="PackedScene" uid="uid://cinljgej7owpj" path="res://scenes/spikes.tscn" id="5_wb6m6"]
 [ext_resource type="PackedScene" uid="uid://caqkxr3u45dsp" path="res://scenes/door_left.tscn" id="6_r7jki"]
 [ext_resource type="PackedScene" uid="uid://cu3fq7cx5qfjs" path="res://scenes/rdmTileSpikeWall.tscn" id="7_1pau4"]
 [ext_resource type="PackedScene" uid="uid://b5ogcl6f7n577" path="res://scenes/door_right.tscn" id="8_2v017"]
+[ext_resource type="PackedScene" uid="uid://deg5n4mnuxijq" path="res://scenes/collecSpawn.tscn" id="9_f3iwb"]
+[ext_resource type="PackedScene" uid="uid://b7dtoumn63bb5" path="res://scenes/heartSpawn.tscn" id="11_wb6m6"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1s6bk"]
 resource_name = "Collectibles"
@@ -306,6 +309,11 @@ scenes/2/scene = ExtResource("5_wb6m6")
 scenes/3/scene = ExtResource("6_r7jki")
 scenes/4/scene = ExtResource("7_1pau4")
 scenes/5/scene = ExtResource("8_2v017")
+scenes/6/scene = ExtResource("9_f3iwb")
+scenes/7/scene = ExtResource("11_wb6m6")
+scenes/8/scene = ExtResource("5_1g7og")
+scenes/9/scene = ExtResource("11_wb6m6")
+scenes/10/scene = ExtResource("5_1g7og")
 
 [resource]
 resource_name = "Placeholder"

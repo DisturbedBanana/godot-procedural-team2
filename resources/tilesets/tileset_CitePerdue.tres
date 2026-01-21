@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://v036cx6hdk10"]
+[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://v036cx6hdk10"]
 
 [ext_resource type="PackedScene" uid="uid://nmpi1435amt" path="res://scenes/key_collectible.tscn" id="1_tyemq"]
 [ext_resource type="PackedScene" uid="uid://dov4nkfsf27hs" path="res://scenes/heart_collectible.tscn" id="2_ep1ig"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://caqkxr3u45dsp" path="res://scenes/door_left.tscn" id="6_4t88h"]
 [ext_resource type="PackedScene" uid="uid://cu3fq7cx5qfjs" path="res://scenes/rdmTileSpikeWall.tscn" id="7_o5qun"]
 [ext_resource type="PackedScene" uid="uid://b5ogcl6f7n577" path="res://scenes/door_right.tscn" id="8_sf0ty"]
+[ext_resource type="PackedScene" uid="uid://deg5n4mnuxijq" path="res://scenes/collecSpawn.tscn" id="9_l0ejk"]
+[ext_resource type="PackedScene" uid="uid://b7dtoumn63bb5" path="res://scenes/heartSpawn.tscn" id="10_nwx4v"]
+[ext_resource type="PackedScene" uid="uid://dhnng1vedqw7m" path="res://scenes/keySpawn.tscn" id="11_aasid"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1s6bk"]
 resource_name = "Collectibles"
@@ -306,6 +309,9 @@ scenes/2/scene = ExtResource("5_m7lqe")
 scenes/3/scene = ExtResource("6_4t88h")
 scenes/4/scene = ExtResource("7_o5qun")
 scenes/5/scene = ExtResource("8_sf0ty")
+scenes/6/scene = ExtResource("9_l0ejk")
+scenes/7/scene = ExtResource("10_nwx4v")
+scenes/8/scene = ExtResource("11_aasid")
 
 [resource]
 resource_name = "Placeholder"

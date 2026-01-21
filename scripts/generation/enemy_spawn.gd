@@ -30,6 +30,5 @@ func _ready() -> void:
 func _spawn()-> void:
 	var rand=randi_range(0,currentChance)
 	if rand <= currentChance:
-		var _entity = ennemy.Instantiate()
-		_entity.sprite
+		var _entity = enemy[0].Instantiate()
 		
