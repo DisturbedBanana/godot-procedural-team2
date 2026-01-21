@@ -11,6 +11,10 @@ static var Instance : Player
 @export var fire_rate : float = 0.2
 @export var muzzle_offset : Vector2 = Vector2(20, 0)
 
+@export_group("Animation")
+@onready var animator = $AnimatedSprite2D
+@export var animation_list : Array[String] = ["idle2", "walk"]
+
 #Interaction
 var Interactable : InteractableBase = null
 
@@ -49,6 +53,10 @@ func _update_inputs() -> void:
 		else:
 			_direction = _direction.normalized()
 
+		if velocity.length() > 0 :
+			animator.play(animation_list[1])
+
+		
 		# 2. SHOOTING INPUT
 		if Input.is_action_pressed("Attack") and _shoot_timer <= 0:
 			shoot_at_mouse()
@@ -117,6 +125,8 @@ func _set_state(state : STATE) -> void:
 		STATE.DEAD:
 			_end_blink()
 			_set_color(dead_color)
+		STATE.IDLE:
+			animator.play(animation_list[0])
 		_:
 			_current_movement = default_movement
 
