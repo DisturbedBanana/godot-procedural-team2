@@ -131,7 +131,7 @@ sprite_frames = SubResource("SpriteFrames_r4bp4")
 animation = &"none"
 
 [node name="FullBubble" type="AnimatedSprite2D" parent="MiniBubble"]
-z_index = 10
+z_index = 3000
 position = Vector2(1, -51.000004)
 scale = Vector2(2, 1.9020513)
 sprite_frames = SubResource("SpriteFrames_ay68w")
