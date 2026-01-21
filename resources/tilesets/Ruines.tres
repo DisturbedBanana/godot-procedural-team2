@@ -1,9 +1,9 @@
-[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://dw4wlfxt37486"]
+[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://c6430vpgg48tr"]
 
 [ext_resource type="PackedScene" uid="uid://nmpi1435amt" path="res://scenes/key_collectible.tscn" id="1_xtlrk"]
 [ext_resource type="PackedScene" uid="uid://dov4nkfsf27hs" path="res://scenes/heart_collectible.tscn" id="2_57xyd"]
 [ext_resource type="Texture2D" uid="uid://dp5mockbotxlq" path="res://sprites/Biome_Ville1.png" id="3_xtlrk"]
-[ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://scenes/enemy.tscn" id="4_su3op"]
+[ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://scenes/npc/enemy.tscn" id="4_su3op"]
 [ext_resource type="PackedScene" uid="uid://cinljgej7owpj" path="res://scenes/spikes.tscn" id="5_ljb30"]
 [ext_resource type="PackedScene" uid="uid://caqkxr3u45dsp" path="res://scenes/door_left.tscn" id="6_8qbcn"]
 [ext_resource type="PackedScene" uid="uid://cu3fq7cx5qfjs" path="res://scenes/rdmTileSpikeWall.tscn" id="7_1ctnb"]
