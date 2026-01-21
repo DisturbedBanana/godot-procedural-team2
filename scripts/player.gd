@@ -124,6 +124,7 @@ func _set_state(state : STATE) -> void:
 		STATE.DEAD:
 			_end_blink()
 			_set_color(dead_color)
+			get_tree().quit()
 		STATE.IDLE:
 			animator.play(animation_list[0])
 			_current_movement = default_movement

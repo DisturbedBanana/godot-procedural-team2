@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://coomnanjg4knk" path="res://sprites/placeholder.png" id="2_limc1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45qmg"]
-size = Vector2(60, 60)
+size = Vector2(40, 40)
 
 [node name="EnemyAttack" type="Area2D"]
 collision_layer = 4
@@ -17,7 +17,7 @@ shape = SubResource("RectangleShape2D_45qmg")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 0.27451)
 position = Vector2(-2.38419e-07, 0)
-scale = Vector2(15, 15)
+scale = Vector2(10, 10)
 texture = ExtResource("2_limc1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
