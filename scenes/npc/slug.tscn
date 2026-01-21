@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cos6qtvfs0hn1"]
+[gd_scene load_steps=6 format=3 uid="uid://cos6qtvfs0hn1"]
 
 [ext_resource type="Script" uid="uid://b5df80s50tpg6" path="res://scripts/npc/enemy.gd" id="1_nq1f4"]
 [ext_resource type="Resource" uid="uid://4wrtqv1kgm5c" path="res://resources/enemy_default_movement.tres" id="2_nb7kl"]
 [ext_resource type="Resource" uid="uid://cxk1f1srqi8ot" path="res://resources/enemy_stunned_movement.tres" id="3_3vtpc"]
 [ext_resource type="PackedScene" uid="uid://imvv20oldcd0" path="res://scenes/enemy_attack.tscn" id="4_c6yed"]
-[ext_resource type="Texture2D" uid="uid://coomnanjg4knk" path="res://sprites/placeholder.png" id="5_gmxsb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p1d5c"]
 
@@ -15,26 +14,13 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_nq1f4")
 entity_quest_type = 4
 attack_distance = 30.0
-sprites = [NodePath("BodySprite"), NodePath("BodySprite/NoseSprite")]
+sprites = [NodePath(""), NodePath("")]
 default_movement = ExtResource("2_nb7kl")
 stunned_movemement = ExtResource("3_3vtpc")
 attack_scene = ExtResource("4_c6yed")
-attack_spawn_point = NodePath("BodySprite/NoseSprite")
+attack_spawn_point = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_p1d5c")
-
-[node name="BodySprite" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
-z_index = 2
-scale = Vector2(5, 5)
-texture = ExtResource("5_gmxsb")
-
-[node name="NoseSprite" type="Sprite2D" parent="BodySprite"]
-modulate = Color(1, 0, 0, 1)
-z_index = 2
-position = Vector2(2, 2.98023e-08)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_gmxsb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
