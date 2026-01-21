@@ -12,8 +12,9 @@ var _posedRoom:Array[Array]
 var space = 32*16; # 16 is the number of tile SPACE IS ROOM SIZE DEPENDENT /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\
 
 func _ready() -> void:
-	_loadAllRoom()
-	_generate()
+	return
+	#_loadAllRoom()
+	#_generate()
 
 func _printMap() -> void:
 	var toPrint = ""

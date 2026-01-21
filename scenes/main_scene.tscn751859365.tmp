@@ -12,6 +12,10 @@
 
 [node name="Dungeon" type="Node2D" parent="."]
 script = ExtResource("1_18nlu")
+BiomsAndRooms = {
+"Forest": ["res://scenes/rooms/Paterne/room_Patern_00.tscn"],
+"hub": ["res://scenes/rooms/Paterne/room_Patern_00.tscn"]
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("2_liovv")
@@ -25,7 +29,7 @@ script = ExtResource("8_18nlu")
 
 [node name="NPC" parent="." instance=ExtResource("6_rt2n2")]
 position = Vector2(33, 0)
-can_give_quest = true
+can_give_quest = false
 
 [node name="Node2D2" type="Node2D" parent="."]
 script = ExtResource("7_c16ls")

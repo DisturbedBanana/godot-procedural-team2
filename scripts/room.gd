@@ -8,7 +8,7 @@ class_name Room extends Node2D
 @export var tilemap_layers : Array[TileMapLayer]
 @export var doors_states: Array[int]
 static var all_rooms : Array[Room]
-@export var biome:BiomeData
+@export var biome:String = "Bayou"
 var doors : Array[Door]
 
 var _cam : Array[CameraFollow]
@@ -24,7 +24,7 @@ func _ready() -> void:
 		Player.Instance.enter_room(self)
 	print(biome)
 	for layer in tilemap_layers:
-		match biome.name:
+		match biome:
 			"Bayou":
 				layer.tile_set=load("res://resources/tilesets/tileset.tres")
 				break
