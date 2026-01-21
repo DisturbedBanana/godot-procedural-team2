@@ -27,7 +27,7 @@ var dic_biome : Dictionary = {
 
 var _state_timer : float = 0.0
 
-var _current_biome : BiomeData
+var _current_biome : BiomeData 
 
 
 func _ready() -> void:
@@ -36,8 +36,9 @@ func _ready() -> void:
 	for room in Room.all_rooms:
 		if room.contains(global_position):
 			_room = room
+			print(_room.biome)
 			
-			_current_biome = QuestManager.Instance.biome_list.find_biome(get(_room.biome))
+			_current_biome = QuestManager.Instance.biome_list.find_biome(dic_biome.get(_room.biome))
 			break
 	_set_state(STATE.IDLE)
 
@@ -77,6 +78,7 @@ func _set_state(state : STATE) -> void:
 			QuestManager.Instance._update_data(entity_quest_type)
 			_end_blink()
 			queue_free()
+		_:
 			_current_movement = default_movement
 
 	if !_can_move():

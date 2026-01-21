@@ -58,11 +58,13 @@ func try_unlock() -> void:
 	Player.Instance.key_count -= 1
 	set_state(STATE.OPEN)
 
-	var next_room = _room.get_adjacent_room(orientation, position)
-	if next_room:
-		var next_door = next_room.get_door(Utils.OppositeOrientation(orientation), position)
-		if next_door != null:
-			next_door.set_state(STATE.OPEN)
+	#var next_room = _room.get_adjacent_room(orientation, position)
+	#_room.set_door_open(orientation,position)
+	#if next_room:
+	#	var next_door = next_room.get_door(Utils.OppositeOrientation(orientation), position)
+	#	if next_door != null:
+	#		next_door.set_state(STATE.OPEN)
+	#		print(next_door.position)
 
 
 func set_state(new_state : STATE) -> void:

@@ -9,8 +9,23 @@ const biome_list = preload("res://resources/biomes/biome_list.tres")
 var id_quest : int = 0
 func _ready() -> void:
 	Instance = self
+	await get_tree().create_timer(0.2).timeout #j'avais pas d'idée comment delay autrement
+	_setup()
+	
+	
+func _setup() -> void:
+	var number_npc = 0
+	var used_npc : Array[NPC] = []
+	while(number_npc < 3):
+		var temp_npc : NPC = NPC.all_npc.pick_random()
+		if(used_npc.find(temp_npc) == -1 && temp_npc.can_give_quest && temp_npc.type != QuestData.QuestType.Tracassin):
+			get_new_quest(temp_npc)
+			number_npc += 1
+	
 	for npc in NPC.all_npc:
-		get_new_quest(npc)
+		npc._setup()
+	
+		
 	
 func get_new_quest(npc : NPC):
 	var quest : QuestData = _create_new_quest(npc.type)

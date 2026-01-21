@@ -125,6 +125,14 @@ func findByClass(node: Node, className : String, result : Array) -> void:
 		result.push_back(node)
 	for child in node.get_children():
 		findByClass(child, className, result)
-
+		
+func set_door_open(orientation : Utils.ORIENTATION, from : Vector2) -> void:
+	var door_position : Vector2i = Vector2i(position) + get_position_offset(from)
+	for door in doors:
+		var offsetPos = Vector2i(position) + get_position_offset(door.position)
+		if door_position == offsetPos && door.orientation == orientation:
+			door.set_state(Door.STATE.OPEN)
+	
+	
 func _exit_tree() -> void:
 	all_rooms.erase(self)

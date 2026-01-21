@@ -4,7 +4,7 @@ var currentRoom: Room
 @export var BiomsAndRooms:Dictionary = {}
 @export var BiomNameListInOrder:Array[String]
 var _loadedRooms = {}
-
+const QuestManager = preload("res://scripts/quest/quest_system.gd")
 var _mapMaxSize = 100.0
 var _posedRoom:Array[Array]
 
@@ -24,9 +24,10 @@ var S1Rooms:Array[Room]
 var S2Rooms:Array[Room]
 var S3Rooms:Array[Room]
 func _ready() -> void:
-	return
+	
 	_loadAllRoom()
 	_generate()
+	
 
 func _printMap() -> void:
 	var toPrint = ""
@@ -215,22 +216,22 @@ func _generate() -> void:
 			add_child(room)
 			match -dir:
 				Vector2.UP:
-					(room as Room).doors_states[0] = 0
+					(room as Room).doors_states[0] = 1
 				Vector2.LEFT:
-					(room as Room).doors_states[1] = 0
+					(room as Room).doors_states[1] = 1
 				Vector2.DOWN:
-					(room as Room).doors_states[2] = 0
+					(room as Room).doors_states[2] = 1
 				Vector2.RIGHT:
-					(room as Room).doors_states[3] = 0
+					(room as Room).doors_states[3] = 1
 			match dir:
 				Vector2.UP:
-					currentRoom.doors_states[0] = 0
+					currentRoom.doors_states[0] = 1
 				Vector2.LEFT:
-					currentRoom.doors_states[1] = 0
+					currentRoom.doors_states[1] = 1
 				Vector2.DOWN:
-					currentRoom.doors_states[2] = 0
+					currentRoom.doors_states[2] = 1
 				Vector2.RIGHT:
-					currentRoom.doors_states[3] = 0
+					currentRoom.doors_states[3] = 1
 			_posedRoom[next_pos.x][next_pos.y] = 1
 			dir = directions.pick_random()
 			match biome:
@@ -295,7 +296,7 @@ func _generate() -> void:
 					if dir==Vector2.DOWN:
 						dir = Vector2.UP			
 			walker_pos=currentRoom.room_pos
-
+	
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:

@@ -9,11 +9,18 @@ var quest : QuestData
 var has_to_talk : bool
 var has_to_give_quest : bool
 
-func _ready() -> void:
+func _init():
 	all_npc.push_back(self)
+
+
+func _setup() -> void:
+	
 	if(can_give_quest):
-		bubble_text.change_state(BubbleText.State.NewQuest)
-		has_to_give_quest = true
+		if(quest != null):
+			bubble_text.change_state(BubbleText.State.NewQuest)
+			has_to_give_quest = true
+		else:
+			return
 	else:
 		
 		bubble_text.change_state(BubbleText.State.Dialog)
