@@ -7,7 +7,7 @@ enum STATE {OPEN = 0, CLOSED = 1, WALL = 2, SECRET = 3}
 @export var secretNode : Node2D
 
 var orientation : Utils.ORIENTATION
-var state : STATE
+@export var state : STATE
 
 var _room : Room
 
@@ -49,8 +49,7 @@ func _ready() -> void:
 			set_state(_room.doors_states[2])
 		Utils.ORIENTATION.EAST:
 			rotation_degrees=90
-			set_state(_room.doors_states[3])
-	
+			set_state(_room.doors_states[3])	
 
 func try_unlock() -> void:
 	if state != STATE.CLOSED || Player.Instance.key_count <= 0:
