@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bib07te5reau7"]
+[gd_scene load_steps=15 format=3 uid="uid://bib07te5reau7"]
 
 [ext_resource type="Script" uid="uid://c0tc77spyevjo" path="res://scripts/player.gd" id="1_ups2j"]
 [ext_resource type="Resource" uid="uid://b3nexs1nbtrff" path="res://resources/player_default_movement.tres" id="2_ay78m"]
@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://dtdfaefxq5nnw" path="res://scenes/player_attack.tscn" id="4_u74pk"]
 [ext_resource type="Texture2D" uid="uid://ddwf420sntw0r" path="res://Assets/PNG/Tiles/Tiles/tile_0216.png" id="6_fjrip"]
 [ext_resource type="Texture2D" uid="uid://bbahxl8x3o1sc" path="res://Assets/PNG/Tiles/Tiles/tile_0217.png" id="7_smehm"]
+[ext_resource type="Texture2D" uid="uid://bx5utxhvgy8si" path="res://Assets/PNG/Players/PlayerAnimSprites/Player_Walk_0.png" id="8_3v2ag"]
+[ext_resource type="Texture2D" uid="uid://cq1k8v7vmo1pt" path="res://Assets/PNG/Players/PlayerAnimSprites/Player_Idle_Transi.png" id="9_jej6c"]
+[ext_resource type="Texture2D" uid="uid://cfhvk12d4gy4a" path="res://Assets/PNG/Players/PlayerAnimSprites/Player_Idle.png" id="10_f1ej7"]
+[ext_resource type="Texture2D" uid="uid://cod61fpxytmd4" path="res://Assets/PNG/Players/PlayerAnimSprites/Player_Walk_1.png" id="11_oprun"]
+[ext_resource type="Texture2D" uid="uid://vq5itxvdwe7q" path="res://Assets/PNG/Players/PlayerAnimSprites/Player_Walk_2.png" id="12_a8ls1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eidcf"]
 
@@ -22,6 +27,31 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_3v2ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jej6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_f1ej7")
+}],
+"loop": false,
+"name": &"idle2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_oprun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_a8ls1")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
@@ -31,7 +61,7 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_ups2j")
 bullet_scene = ExtResource("2_tuyoq")
 dead_color = Color(0.413595, 0.399579, 0.385991, 1)
-sprites = [null, null]
+sprites = [null]
 default_movement = ExtResource("2_ay78m")
 stunned_movemement = ExtResource("3_8ktro")
 attack_scene = ExtResource("4_u74pk")
@@ -42,4 +72,4 @@ shape = SubResource("CircleShape2D_eidcf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ur7pv")
-animation = &"idle"
+animation = &"idle2"
