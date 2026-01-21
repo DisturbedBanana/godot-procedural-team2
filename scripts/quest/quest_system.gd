@@ -9,9 +9,14 @@ const biome_list = preload("res://resources/biomes/biome_list.tres")
 var id_quest : int = 0
 func _ready() -> void:
 	Instance = self
-	_create_new_quest(Data.QuestType.Tracassin)
-	_create_new_quest(Data.QuestType.Syndicat)
-
+	for npc in NPC.all_npc:
+		get_new_quest(npc)
+	
+func get_new_quest(npc : NPC):
+	var quest : QuestData = _create_new_quest(npc.type)
+	npc.quest = quest
+	HUD.Instance._add_quest(quest.id)
+	
 func _create_new_quest(type : Data.QuestType) -> QuestData:
 
 	var data = QuestData.new()
@@ -41,6 +46,7 @@ func _create_new_quest(type : Data.QuestType) -> QuestData:
 			data.entity = data.dic_entity.get(_quest_elements.get("entity"))
 		data.text = _quest_text
 		data.id = id_quest
+		print(data.text)
 		id_quest += 1
 		return data
 	return null
