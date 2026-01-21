@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b20085rng87fk"]
+[gd_scene load_steps=4 format=3 uid="uid://b20085rng87fk"]
 
 [ext_resource type="Script" uid="uid://bet45gulqsrwk" path="res://scripts/hud.gd" id="1_ftoh2"]
 [ext_resource type="PackedScene" uid="uid://bxb3sh2rsgn4j" path="res://scenes/heart.tscn" id="2_fymyw"]
+[ext_resource type="PackedScene" uid="uid://dmk8gp08lk07l" path="res://scenes/quest_info.tscn" id="3_5ysmq"]
 
 [node name="hud" type="CanvasLayer"]
 script = ExtResource("1_ftoh2")
 heart_scene = ExtResource("2_fymyw")
+quest_infos = ExtResource("3_5ysmq")
 
 [node name="LifeContainer" type="HBoxContainer" parent="."]
 offset_right = 170.0
@@ -17,7 +19,3 @@ offset_left = 2.0
 offset_top = 201.0
 offset_right = 461.0
 offset_bottom = 646.0
-
-[node name="Quest" type="RichTextLabel" parent="Quests"]
-custom_minimum_size = Vector2(0, 106.745)
-layout_mode = 2

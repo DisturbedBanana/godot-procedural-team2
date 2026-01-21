@@ -18,6 +18,7 @@ var dic_biome : Dictionary = {
 	"Swamp" : "Swamp",
 	"Bayou" : "Bayou"
 }
+
 @export var entity_quest_type : Data.QuestEntity
 
 @export var attack_warm_up : float = 0.5
@@ -31,7 +32,6 @@ var _current_biome : BiomeData
 func _ready() -> void:
 	anim.play("idle")
 	all_enemies.push_back(self)
-	var room_biome
 	for room in Room.all_rooms:
 		if room.contains(global_position):
 			_room = room
@@ -73,7 +73,7 @@ func _set_state(state : STATE) -> void:
 			_current_movement = stunned_movemement
 		STATE.DEAD:
 			anim.play("death")
-			
+			QuestManager.Instance._update_data(entity_quest_type)
 			_end_blink()
 			queue_free()
 		_:

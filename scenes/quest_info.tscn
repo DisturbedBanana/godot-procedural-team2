@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://dmk8gp08lk07l"]
+
+[node name="Quest" type="RichTextLabel"]
+custom_minimum_size = Vector2(221.47, 50.73)
