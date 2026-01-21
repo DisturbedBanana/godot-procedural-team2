@@ -1,7 +1,6 @@
 class_name collec_Spawner extends Area2D
 
 @export var spawnChance:Array[int]
-@export var collec :Array[String]
 var key=preload("res://scenes/key_collectible.tscn")
 var heart=preload("res://scenes/heart_collectible.tscn")
 var room:Room
@@ -14,10 +13,10 @@ func _ready() -> void:
 func _spawn()-> void:
 	var rand=randi_range(0,100)
 	print(rand)
-	if rand < spawnChance[0]:
+	if rand <= spawnChance[0]:
 		var collec = key.instantiate()
 		add_child(collec)
-	elif rand < spawnChance[1]:
+	elif rand <= spawnChance[1]:
 		var collec = heart.instantiate()
 		add_child(collec)
 
