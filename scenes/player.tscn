@@ -68,6 +68,7 @@ attack_scene = ExtResource("4_u74pk")
 orientation = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.665, 0.665)
 shape = SubResource("CircleShape2D_eidcf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
