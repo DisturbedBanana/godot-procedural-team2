@@ -33,10 +33,6 @@ BiomNameListInOrder = Array[String](["Forest", "LostWoods", "Desert1", "Steppe1"
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-z_index = -220
-texture = ExtResource("6_rt2n2")
-
 [node name="hud" parent="." instance=ExtResource("7_i43eg")]
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -44,3 +40,16 @@ script = ExtResource("8_18nlu")
 
 [node name="QuestManager" type="Node2D" parent="."]
 script = ExtResource("5_gubc5")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("../Player")
+node_b = NodePath("../RigidBody2D")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(-230, -116)
+
+[node name="TextureRect" type="TextureRect" parent="RigidBody2D"]
+z_index = -280
+offset_right = 439.0
+offset_bottom = 229.0
+texture = ExtResource("6_rt2n2")
