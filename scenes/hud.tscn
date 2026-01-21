@@ -11,3 +11,13 @@ heart_scene = ExtResource("2_fymyw")
 offset_right = 170.0
 offset_bottom = 50.0
 theme_override_constants/separation = 10
+
+[node name="Quests" type="VBoxContainer" parent="."]
+offset_left = 2.0
+offset_top = 201.0
+offset_right = 461.0
+offset_bottom = 646.0
+
+[node name="Quest" type="RichTextLabel" parent="Quests"]
+custom_minimum_size = Vector2(0, 106.745)
+layout_mode = 2

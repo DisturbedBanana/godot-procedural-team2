@@ -61,7 +61,8 @@ func _physics_process(_delta: float) -> void:
 		velocity += _direction * _current_movement.acceleration * get_physics_process_delta_time()
 		velocity = velocity.limit_length(_current_movement.speed_max)
 		if self is not Player:
-			main_sprite.rotation = _compute_orientation_angle(_direction)
+			if main_sprite != null:
+				main_sprite.rotation = _compute_orientation_angle(_direction)
 			
 	else:
 		## If direction length == 0, Apply friction
