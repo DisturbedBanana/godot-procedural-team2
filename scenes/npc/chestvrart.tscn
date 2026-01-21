@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://ii8y312rhp87"]
 
 [ext_resource type="Script" uid="uid://c0iawuetyuord" path="res://scripts/npc/npc.gd" id="1_3xv6r"]
-[ext_resource type="Texture2D" uid="uid://b2ieh2mw6y3e7" path="res://Assets/PNG/Tiles/Tiles/tile_0224.png" id="2_ikdyk"]
+[ext_resource type="Texture2D" uid="uid://dxpeen1x3plqb" path="res://Assets/NPCs/evrart.png" id="2_3xv6r"]
 [ext_resource type="PackedScene" uid="uid://g8lhx86tvf21" path="res://scenes/interactable_pnj.tscn" id="3_3jaxr"]
 [ext_resource type="Script" uid="uid://cq5nxwcy3afs6" path="res://scripts/npc/bubble_text.gd" id="4_3j6by"]
 [ext_resource type="Texture2D" uid="uid://f0emmgefxrkq" path="res://Assets/PNG/Interface/Tiles/void.png" id="5_5pmcd"]
@@ -16,7 +16,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ikdyk")
+"texture": ExtResource("2_3xv6r")
 }],
 "loop": true,
 "name": &"default",
@@ -109,7 +109,7 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_3xv6r")
 type = 1
 can_give_quest = true
-voicelines_list = Array[String](["Itadakimasu bismillah!"])
+voicelines_list = Array[String](["*bruit de coffre*", "*bruit de coffre mais qui grince*", "Jsuis au régime d'items depuis quelques semaines.."])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_p1d5c")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://binh5ge6a6imc"]
 
 [ext_resource type="Script" uid="uid://c0iawuetyuord" path="res://scripts/npc/npc.gd" id="1_udefx"]
-[ext_resource type="Texture2D" uid="uid://b2ieh2mw6y3e7" path="res://Assets/PNG/Tiles/Tiles/tile_0224.png" id="2_bp5o1"]
+[ext_resource type="Texture2D" uid="uid://6nwhvkcddi3p" path="res://Assets/NPCs/pedrito.png" id="2_udefx"]
 [ext_resource type="PackedScene" uid="uid://g8lhx86tvf21" path="res://scenes/interactable_pnj.tscn" id="3_lfgek"]
 [ext_resource type="Script" uid="uid://cq5nxwcy3afs6" path="res://scripts/npc/bubble_text.gd" id="4_kop5h"]
 [ext_resource type="Texture2D" uid="uid://f0emmgefxrkq" path="res://Assets/PNG/Interface/Tiles/void.png" id="5_kmv8b"]
@@ -16,7 +16,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_bp5o1")
+"texture": ExtResource("2_udefx")
 }],
 "loop": true,
 "name": &"default",
@@ -108,7 +108,7 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_udefx")
 type = 1
-voicelines_list = Array[String](["Itadakimasu bismillah!"])
+voicelines_list = Array[String](["Rejoins le syndicat des mimics!", "Bonjour vous etes un mimic? Oui? Oki rejoignez nous^^", "MORT AU TRACASSIN"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_p1d5c")

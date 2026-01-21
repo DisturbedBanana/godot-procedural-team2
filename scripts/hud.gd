@@ -47,7 +47,7 @@ func _remove_quest(id : int) -> void:
 	quest_container.remove_child(quest_hud)
 
 func _update_quest(id : int) -> void:
-	var quest_text = quest_container.get_node(str(id))
+	var quest_text = quest_container.get_node(str(id)).get_node("Text")
 	var quest : QuestData = QuestManager.Instance._find_quest_with_id(id)
 	quest_text.text = "Vous devez {action} {number} {entity} dans {biome}".format({
 		"action": quest.dic_action.find_key(quest.action), 
