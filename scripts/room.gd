@@ -8,48 +8,20 @@ class_name Room extends Node2D
 @export var tilemap_layers : Array[TileMapLayer]
 @export var doors_states: Array[int]
 static var all_rooms : Array[Room]
-@export var biome:String = "Bayou"
+@export var biome:String
 var doors : Array[Door]
 
 var _cam : Array[CameraFollow]
 
-
 func _ready() -> void:
-	findByClass(get_parent(),"CameraFollow",_cam)
-	position=room_pos
-	print(position)
-	doors_states=[0,0,0,0]
+
+	findByClass(get_parent().get_parent(),"CameraFollow",_cam)
+	doors_states=[2,2,2,2]
 	all_rooms.push_back(self)
 	if is_start_room:
 		Player.Instance.enter_room(self)
 	print(biome)
-	for layer in tilemap_layers:
-		match biome:
-			"Bayou":
-				layer.tile_set=load("res://resources/tilesets/tileset.tres")
-				break
-			"LostCity":
-				layer.tile_set=load("res://resources/tilesets/placeholder_tileset.tres")
-				break
-			"Desert":
-				layer.tile_set=load("res://resources/tilesets/placeholder_tileset.tres")
-				break
-			"Forest":
-				layer.tile_set=load("res://resources/tilesets/placeholder_tileset.tres")
-				break
-			"Ruins":
-				layer.tile_set=load("res://resources/tilesets/placeholder_tileset.tres")
-				break
-			"Steppe":
-				layer.tile_set=load("res://resources/tilesets/placeholder_tileset.tres")
-				break
-			"Swamp":
-				layer.tile_set=load("res://resources/tilesets/placeholder_tileset.tres")
-				break
-			"ForgottenWood":
-				layer.tile_set=load("res://resources/tilesets/placeholder_tileset.tres")
-				break
-			
+	
 
 
 func get_local_bounds() -> Rect2:
@@ -80,10 +52,6 @@ func contains(point : Vector2) -> bool:
 func on_enter_room(from : Room) -> void:
 	var camera_bounds = get_world_bounds()
 	_cam[0].set_bounds(camera_bounds)
-
-func set_doors()->void:
-	for door in doors:
-		door.set_door();
 
 func get_adjacent_room(orientation : Utils.ORIENTATION, from : Vector2) -> Room:
 	var dir : Vector2i = Utils.OrientationToDir(orientation)
