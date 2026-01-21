@@ -21,7 +21,7 @@ func onReady() -> void:
 	for layer in tilemap_layers:
 		match biome:
 			"hub":
-				layer.tile_set=load("res://resources/tilesets/tileset_Foret.tres")
+				layer.tile_set=load("res://resources/tilesets/tileset_Hub.tres")
 			"Forest":
 				layer.tile_set=load("res://resources/tilesets/tileset_Foret.tres")
 			"Swamp":

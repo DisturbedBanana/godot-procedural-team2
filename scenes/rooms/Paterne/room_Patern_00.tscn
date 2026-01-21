@@ -13,9 +13,14 @@ tile_map_data = PackedByteArray("AADz//7/AQABAAYAAADz////AQABAAYAAADz/wAAAQABAAI
 tile_set = ExtResource("2_8oc7o")
 
 [node name="Props 2" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD6//v/AgAAAAAAAwD0/wIAAgAAAAAAAwD7/wgAAgAAAAAAAwABAAEAAgAAAAAAAwD7//v/AgAAAAAABQD0/wEAAgAAAAAABQD6/wgAAgAAAAAABQABAAIAAgAAAAAABQD5/wEAAgAAAAAABgD4/wUAAgAAAAAACAD5/wUAAgAAAAAACAD6/wUAAgAAAAAACAD7/wUAAgAAAAAACAD7//3/AgAAAAAABwD7//7/AgAAAAAABwD8//7/AgAAAAAABwD8////AgAAAAAABwD7////AgAAAAAABwD9////AgAAAAAABwD+////AgAAAAAABwA=")
+tile_map_data = PackedByteArray("AAD6//v/AgAAAAAAAwD0/wIAAgAAAAAAAwD7/wgAAgAAAAAAAwABAAEAAgAAAAAAAwD7//v/AgAAAAAABQD0/wEAAgAAAAAABQD6/wgAAgAAAAAABQABAAIAAgAAAAAABQD5/wEAAgAAAAAABgD4/wUAAgAAAAAACAD5/wUAAgAAAAAACAD6/wUAAgAAAAAACAD7/wUAAgAAAAAACAD7//3/AgAAAAAABwD7//7/AgAAAAAABwD8//7/AgAAAAAABwD8////AgAAAAAABwD7////AgAAAAAABwD9////AgAAAAAABwD+////AgAAAAAABwD2//z/AAAAAAAAAQD3//z/AAAAAAAAAQD+//z/AAAAAAAAAQD///z/AAAAAAAAAQD4/wQAAQADAAIAAAD9//7/AQADAAIAAAA=")
 tile_set = ExtResource("2_8oc7o")
 
 [node name="PNJ" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD6/wIAAwAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAAAAAcAAwAAAAAABAD1/wIAAwAAAAAABwA=")
 tile_set = ExtResource("2_8oc7o")
+
+[connection signal="body_entered" from="Props 2/KeyCollectible" to="Props 2/KeyCollectible" method="_on_body_entered"]
+[connection signal="body_entered" from="Props 2/@Area2D@25243" to="Props 2/@Area2D@25243" method="_on_body_entered"]
+[connection signal="body_entered" from="Props 2/@Area2D@25244" to="Props 2/@Area2D@25244" method="_on_body_entered"]
+[connection signal="body_entered" from="Props 2/@Area2D@25245" to="Props 2/@Area2D@25245" method="_on_body_entered"]
