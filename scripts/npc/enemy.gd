@@ -5,6 +5,7 @@ const QuestManager = preload("res://scripts/quest/quest_system.gd")
 
 static var all_enemies : Array[Enemy]
 var dic_biome : Dictionary = {
+	"hub" : "Forest",
 	"Forest" : "Forest",
 	"LostWoods" : "ForgottenWood",
 	"Desert1" : "Desert",
@@ -25,7 +26,7 @@ var dic_biome : Dictionary = {
 
 var _state_timer : float = 0.0
 
-var _current_biome : BiomeData
+var _current_biome : BiomeData 
 
 
 func _ready() -> void:
@@ -35,8 +36,9 @@ func _ready() -> void:
 	for room in Room.all_rooms:
 		if room.contains(global_position):
 			_room = room
+			print(_room.biome)
 			
-			_current_biome.name = dic_biome.get(_room.biome)
+			_current_biome = QuestManager.Instance.biome_list.find_biome(dic_biome.get(_room.biome))
 			break
 	_set_state(STATE.IDLE)
 

@@ -24,9 +24,9 @@ var S1Rooms:Array[Room]
 var S2Rooms:Array[Room]
 var S3Rooms:Array[Room]
 func _ready() -> void:
-	return
-	#_loadAllRoom()
-	#_generate()
+	
+	_loadAllRoom()
+	_generate()
 
 func _printMap() -> void:
 	var toPrint = ""
