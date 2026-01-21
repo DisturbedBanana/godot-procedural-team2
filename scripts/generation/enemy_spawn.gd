@@ -1,14 +1,14 @@
 class_name spawner extends Area2D
 
 @export var spawnChance:Array[int]
-var monster=preload("res://scenes/npc/enemy/fox.tscn")# PAS EU LE TEMPS 
-var slug=preload("res://scenes/npc/enemy/slug.tscn")
-var mosquito=preload("res://scenes/npc/enemy/mosquito.tscn")
-var mouse=preload("res://scenes/npc/enemy/mouse.tscn")
-var skull=preload("res://scenes/npc/enemy/mosquito.tscn")
-var castor=preload("res://scenes/npc/enemy/fox.tscn")
-var radish=preload("res://scenes/npc/enemy/mosquito.tscn")
-var rabbit=preload("res://scenes/npc/enemy/mouse.tscn")
+var monster=preload("res://scenes/npc/enemy/deserten.tscn")
+var slug=preload("res://scenes/npc/enemy/swampen.tscn")
+var mosquito=preload("res://scenes/npc/enemy/bayouen.tscn")
+var mouse=preload("res://scenes/npc/enemy/ruinen.tscn")
+var skull=preload("res://scenes/npc/enemy/steppeen.tscn")
+var beaver=preload("res://scenes/npc/enemy/lostwooden.tscn")
+var radish=preload("res://scenes/npc/enemy/lostcityen.tscn")
+var rabbit=preload("res://scenes/npc/enemy/foresten.tscn")
 
 var room:Room
 var currentChance
@@ -33,7 +33,7 @@ func _ready() -> void:
 		currentChance=spawnChance[3]
 	else:
 		currentChance=0;
-	pass # Replace with function body.
+	_spawn() # Replace with function body.
 
 func _spawn()-> void:
 	var rand=randi_range(0,currentChance)
@@ -42,36 +42,48 @@ func _spawn()-> void:
 			"Forest":
 				var en = rabbit.instantiate()
 				add_child(en)
+				(en as Enemy).goOnReady()
 			"Ruin":
-				var en = radish.instantiate()
+				var en = mouse.instantiate()
 				add_child(en)
+				(en as Enemy).goOnReady()
 			"Swamp":
 				var en = slug.instantiate()
 				add_child(en)
+				(en as Enemy).goOnReady()
 			"LostWoods":
-				var en = castor.instantiate()
+				var en = beaver.instantiate()
 				add_child(en)
+				(en as Enemy).goOnReady()
 			"Bayou":
 				var en = mosquito.instantiate()
 				add_child(en)
+				(en as Enemy).goOnReady()
 			"LostCity":
-				var en = mouse.instantiate()
+				var en = radish.instantiate()
 				add_child(en)
+				(en as Enemy).goOnReady()
 			"Desert1":
 				var en = monster.instantiate()
 				add_child(en)
+				(en as Enemy).goOnReady()
 			"Desert2":
 				var en = monster.instantiate()
 				add_child(en)
+				(en as Enemy).goOnReady()
 			"Desert3":
 				var en = monster.instantiate()
 				add_child(en)
-			"Enemy1":
+				(en as Enemy).goOnReady()
+			"Steppe1":
 				var en = skull.instantiate()
 				add_child(en)
-			"Enemy2":
+				(en as Enemy).goOnReady()
+			"Steppe2":
 				var en = skull.instantiate()
 				add_child(en)
-			"Enemy3":
+				(en as Enemy).goOnReady()
+			"Steppe3":
 				var en = skull.instantiate()
 				add_child(en)
+				(en as Enemy).goOnReady()

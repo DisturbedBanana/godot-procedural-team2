@@ -2,6 +2,6 @@
 
 [ext_resource type="Script" uid="uid://by44i0srfyj5y" path="res://scripts/generation/collectible_spawn.gd" id="1_tsuiu"]
 
-[node name="collecSpawner" type="Area2D"]
+[node name="collecSpawner2" type="Area2D"]
 script = ExtResource("1_tsuiu")
-spawnChance = Array[int]([80, 0])
+spawnChance = Array[int]([100, 0])

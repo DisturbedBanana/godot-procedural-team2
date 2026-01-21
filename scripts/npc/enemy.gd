@@ -29,22 +29,31 @@ var _state_timer : float = 0.0
 
 var _current_biome : BiomeData 
 
-
 func _ready() -> void:
-	anim.play("idle")
-	all_enemies.push_back(self)
-	for room in Room.all_rooms:
-		if room.contains(global_position):
-			_room = room
-			print(_room.biome)
-			
-			_current_biome = QuestManager.Instance.biome_list.find_biome(dic_biome.get(_room.biome))
-			break
+	goOnReady()
+	
+func goOnReady() -> void:
 	_set_state(STATE.IDLE)
+	anim.play("idle")
+	var node = self
+	while (node != null && !node is Room):
+		node = node.get_parent()
+		
+	if node == null:
+		push_error(node == null, "The door is not in any room")
+		return
+
+	_room = node
+	print(_room.name)
+	all_enemies.push_back(self)
+	_current_biome = QuestManager.Instance.biome_list.find_biome(dic_biome.get(_room.biome))
+	
+	_current_movement = default_movement
 
 
 func _process(delta: float) -> void:
 	super(delta)
+	
 	update_AI()
 
 
@@ -53,7 +62,10 @@ func _exit_tree() -> void:
 
 
 func update_AI() -> void:
+		
 	if _can_move() && Player.Instance._room == _room:
+		print(_room.name)
+		print(Player.Instance._room.name)
 		var enemy_to_player = Player.Instance.global_position - global_position
 		if enemy_to_player.length() < attack_distance:
 			_attack()
@@ -68,17 +80,17 @@ func update_AI() -> void:
 func _set_state(state : STATE) -> void:
 	super(state)
 	_state_timer = 0.0
-
 	match _state:
 		STATE.STUNNED:
 			anim.play("idle")
 			_current_movement = stunned_movemement
 		STATE.DEAD:
 			anim.play("death")
-			QuestManager.Instance._update_data(entity_quest_type)
+			#QuestManager.Instance._update_data(entity_quest_type)
 			_end_blink()
 			queue_free()
-		_:
+		STATE.IDLE:
+			anim.play("idle")
 			_current_movement = default_movement
 
 	if !_can_move():

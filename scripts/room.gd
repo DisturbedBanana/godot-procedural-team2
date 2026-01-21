@@ -16,8 +16,8 @@ var doors : Array[Door]
 func onReady() -> void:
 	doors_states=[2,2,2,2]
 	all_rooms.push_back(self)
-	#if is_start_room==true:
-		#Player.Instance.enter_room(self)
+	if is_start_room==true:
+		Player.Instance.enter_room(self)
 	print(biome)
 	for layer in tilemap_layers:
 		match biome:
@@ -75,7 +75,8 @@ func contains(point : Vector2) -> bool:
 
 func on_enter_room(from : Room) -> void:
 	var camera_bounds = get_world_bounds()
-	_cam.set_bounds(camera_bounds)
+
+#	_cam.set_bounds(camera_bounds)
 
 func get_adjacent_room(orientation : Utils.ORIENTATION, from : Vector2) -> Room:
 	var dir : Vector2i = Utils.OrientationToDir(orientation)

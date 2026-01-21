@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cvvvadn1pv8l2"]
 
-[ext_resource type="Script" path="res://scripts/generation/enemy_spawn.gd" id="1_1gtuf"]
+[ext_resource type="Script" uid="uid://dnvsulmlnhq7d" path="res://scripts/generation/enemy_spawn.gd" id="1_1gtuf"]
 
 [node name="Spawner" type="Area2D"]
 script = ExtResource("1_1gtuf")
-spawnChance = Array[int]([33, 33])
+spawnChance = Array[int]([100, 100, 100, 100])

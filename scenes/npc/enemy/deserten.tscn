@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://cfgpuo3badcmf"]
 
-[ext_resource type="Script" uid="uid://b5df80s50tpg6" path="res://scripts/npc/enemy.gd" id="1_w2t12"]
-[ext_resource type="Resource" uid="uid://4wrtqv1kgm5c" path="res://resources/enemy_default_movement.tres" id="2_xdqwa"]
-[ext_resource type="Resource" uid="uid://cxk1f1srqi8ot" path="res://resources/enemy_stunned_movement.tres" id="3_2cpb8"]
-[ext_resource type="PackedScene" uid="uid://imvv20oldcd0" path="res://scenes/enemy_attack.tscn" id="4_haj3j"]
-[ext_resource type="Texture2D" uid="uid://2wqv11xj3vc1" path="res://Assets/PNG/Players/Tiles/tile_0003.png" id="6_p3smv"]
-[ext_resource type="Texture2D" uid="uid://cfi57tld4lv5e" path="res://Assets/PNG/Players/Tiles/tile_0000.png" id="7_icoif"]
-[ext_resource type="Texture2D" uid="uid://crjxo5k4qwt41" path="res://Assets/PNG/Players/Tiles/tile_0001.png" id="8_42fnd"]
-[ext_resource type="Texture2D" uid="uid://nswt2df6lffs" path="res://Assets/PNG/Players/Tiles/tile_0002.png" id="9_wqhfh"]
+[ext_resource type="Script" uid="uid://b5df80s50tpg6" path="res://scripts/npc/enemy.gd" id="1_looeo"]
+[ext_resource type="Resource" uid="uid://4wrtqv1kgm5c" path="res://resources/enemy_default_movement.tres" id="2_2poge"]
+[ext_resource type="Resource" uid="uid://cxk1f1srqi8ot" path="res://resources/enemy_stunned_movement.tres" id="3_uxql2"]
+[ext_resource type="PackedScene" uid="uid://imvv20oldcd0" path="res://scenes/enemy_attack.tscn" id="4_jdy4m"]
+[ext_resource type="Texture2D" uid="uid://48fq44nfmbws" path="res://Assets/PNG/Enemies/Tiles/DesertDead.png" id="5_j4hti"]
+[ext_resource type="Texture2D" uid="uid://d2pkgmnwwc5m" path="res://Assets/PNG/Enemies/Tiles/Desert1.png" id="6_hah0b"]
+[ext_resource type="Texture2D" uid="uid://bmb1gomeyjvvj" path="res://Assets/PNG/Enemies/Tiles/Desert2.png" id="7_x1fub"]
+[ext_resource type="Texture2D" uid="uid://d4c5cylv3w5oc" path="res://Assets/PNG/Enemies/Tiles/Desert3.png" id="8_tprn4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p1d5c"]
 radius = 22.0
@@ -16,7 +16,7 @@ radius = 22.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_p3smv")
+"texture": ExtResource("5_j4hti")
 }],
 "loop": true,
 "name": &"death",
@@ -24,7 +24,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_icoif")
+"texture": ExtResource("6_hah0b")
 }],
 "loop": true,
 "name": &"idle",
@@ -32,10 +32,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_42fnd")
+"texture": ExtResource("7_x1fub")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_wqhfh")
+"texture": ExtResource("8_tprn4")
 }],
 "loop": true,
 "name": &"walk",
@@ -68,13 +68,13 @@ func death() -> void:
 collision_mask = 3
 motion_mode = 1
 wall_min_slide_angle = 0.0
-script = ExtResource("1_w2t12")
+script = ExtResource("1_looeo")
 entity_quest_type = 5
-attack_distance = 30.0
+attack_distance = 35.0
 sprites = [null, null]
-default_movement = ExtResource("2_xdqwa")
-stunned_movemement = ExtResource("3_2cpb8")
-attack_scene = ExtResource("4_haj3j")
+default_movement = ExtResource("2_2poge")
+stunned_movemement = ExtResource("3_uxql2")
+attack_scene = ExtResource("4_jdy4m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_p1d5c")
@@ -83,6 +83,5 @@ shape = SubResource("CircleShape2D_p1d5c")
 position = Vector2(0, -5)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_w2t12")
-animation = &"walk"
-frame_progress = 0.80057716
+animation = &"death"
 script = SubResource("GDScript_haj3j")
