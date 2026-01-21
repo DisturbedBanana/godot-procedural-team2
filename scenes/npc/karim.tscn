@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://c5f8724mypoly"]
 
 [ext_resource type="Script" uid="uid://c0iawuetyuord" path="res://scripts/npc/npc.gd" id="1_nyil2"]
-[ext_resource type="Texture2D" uid="uid://b2ieh2mw6y3e7" path="res://Assets/PNG/Tiles/Tiles/tile_0224.png" id="2_8di88"]
+[ext_resource type="Texture2D" uid="uid://bae0ywgu4ya7c" path="res://Assets/NPCs/karim.png" id="2_nyil2"]
 [ext_resource type="PackedScene" uid="uid://g8lhx86tvf21" path="res://scenes/interactable_pnj.tscn" id="3_2ntal"]
 [ext_resource type="Script" uid="uid://cq5nxwcy3afs6" path="res://scripts/npc/bubble_text.gd" id="4_ql54r"]
 [ext_resource type="Texture2D" uid="uid://f0emmgefxrkq" path="res://Assets/PNG/Interface/Tiles/void.png" id="5_atmjx"]
@@ -16,7 +16,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8di88")
+"texture": ExtResource("2_nyil2")
 }],
 "loop": true,
 "name": &"default",
@@ -108,7 +108,7 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_nyil2")
 type = 1
-voicelines_list = Array[String](["Itadakimasu bismillah!"])
+voicelines_list = Array[String](["Approchez approch- Pourquoi tu me regardes??", "T'as des sous sous?", "Ton pere serait pas voleur? Parce qu'il m'a tout pris (comme ce projet)"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_p1d5c")
@@ -125,11 +125,13 @@ shape = SubResource("CircleShape2D_dpyoa")
 script = ExtResource("4_ql54r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MiniBubble"]
+z_index = 7
 position = Vector2(0, -23)
 sprite_frames = SubResource("SpriteFrames_r4bp4")
 animation = &"none"
 
 [node name="FullBubble" type="AnimatedSprite2D" parent="MiniBubble"]
+z_index = 10
 position = Vector2(1, -51.000004)
 scale = Vector2(2, 1.9020513)
 sprite_frames = SubResource("SpriteFrames_ay68w")

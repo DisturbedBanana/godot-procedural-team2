@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://db5cfan2a3vjb"]
+[gd_scene load_steps=7 format=3 uid="uid://db5cfan2a3vjb"]
 
 [ext_resource type="Script" uid="uid://6tgphk7x871g" path="res://scripts/dungeonGeneration.gd" id="1_18nlu"]
 [ext_resource type="PackedScene" uid="uid://bib07te5reau7" path="res://scenes/player.tscn" id="1_qspk8"]
 [ext_resource type="Script" uid="uid://davpd7l47225i" path="res://scripts/quest/quest_system.gd" id="5_gubc5"]
+[ext_resource type="Texture2D" uid="uid://efsgivysi44x" path="res://sprites/BG.png" id="6_rt2n2"]
 [ext_resource type="PackedScene" uid="uid://b20085rng87fk" path="res://scenes/hud.tscn" id="7_i43eg"]
 [ext_resource type="Script" uid="uid://vlnmhmu01l7d" path="res://scripts/BP_Target.gd" id="8_18nlu"]
 
@@ -39,3 +40,16 @@ script = ExtResource("8_18nlu")
 
 [node name="QuestManager" type="Node2D" parent="."]
 script = ExtResource("5_gubc5")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("../Player")
+node_b = NodePath("../RigidBody2D")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(-230, -116)
+
+[node name="TextureRect" type="TextureRect" parent="RigidBody2D"]
+z_index = -280
+offset_right = 439.0
+offset_bottom = 229.0
+texture = ExtResource("6_rt2n2")

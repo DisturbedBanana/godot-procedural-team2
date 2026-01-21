@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://3hw82afj25md"]
 
 [ext_resource type="Script" uid="uid://c0iawuetyuord" path="res://scripts/npc/npc.gd" id="1_pcwmf"]
-[ext_resource type="Texture2D" uid="uid://b2ieh2mw6y3e7" path="res://Assets/PNG/Tiles/Tiles/tile_0224.png" id="2_pcwmf"]
+[ext_resource type="Texture2D" uid="uid://srp1votv7g4i" path="res://Assets/PNG/Tiles/Tiles/tile_0218.png" id="2_hlwrr"]
 [ext_resource type="Texture2D" uid="uid://bajehhmxjjpkv" path="res://Assets/PNG/Interface/Tiles/tile_0060.png" id="3_r4bp4"]
 [ext_resource type="PackedScene" uid="uid://g8lhx86tvf21" path="res://scenes/interactable_pnj.tscn" id="4_r4bp4"]
 [ext_resource type="Script" uid="uid://cq5nxwcy3afs6" path="res://scripts/npc/bubble_text.gd" id="4_woxlu"]
@@ -16,10 +16,10 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_pcwmf")
+"texture": ExtResource("2_hlwrr")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -111,13 +111,14 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_pcwmf")
 type = 1
-voicelines_list = Array[String](["Itadakimasu bismillah!"])
+voicelines_list = Array[String](["*bruit de coffre*", "*krouik*", "GOLDEN FREDDY!!", "Bla bla bla", "Wiwiwi", "Mlem!"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_p1d5c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dpyoa")
+animation = &"idle"
 
 [node name="pnj_interaction" parent="." instance=ExtResource("4_r4bp4")]
 
@@ -128,11 +129,13 @@ shape = SubResource("CircleShape2D_dpyoa")
 script = ExtResource("4_woxlu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MiniBubble"]
+z_index = 10
 position = Vector2(0, -23)
 sprite_frames = SubResource("SpriteFrames_r4bp4")
 animation = &"none"
 
 [node name="FullBubble" type="AnimatedSprite2D" parent="MiniBubble"]
+z_index = 10
 position = Vector2(1, -51.000004)
 scale = Vector2(2, 1.9020513)
 sprite_frames = SubResource("SpriteFrames_ay68w")

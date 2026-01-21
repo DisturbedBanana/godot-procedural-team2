@@ -16,6 +16,8 @@ static var Instance : Player
 @onready var animator = $AnimatedSprite2D
 @export var animation_list : Array[String] = ["idle2", "walk"]
 
+@onready var shoot_indicator = $"ShootIndicator"
+
 #Interaction
 var Interactable : InteractableBase = null
 
@@ -37,6 +39,7 @@ func _process(delta: float) -> void:
 	# 1. ROTATION LOGIC
 	# Faces the mouse cursor
 	look_at(get_global_mouse_position())
+	animator.global_rotation = 0
 	# Update Timers
 	if _shoot_timer > 0:
 		_shoot_timer -= delta

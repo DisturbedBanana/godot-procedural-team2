@@ -1,4 +1,26 @@
-[gd_scene format=3 uid="uid://dmk8gp08lk07l"]
+[gd_scene load_steps=2 format=3 uid="uid://dmk8gp08lk07l"]
 
-[node name="Quest" type="RichTextLabel"]
-custom_minimum_size = Vector2(221.47, 50.73)
+[ext_resource type="Texture2D" uid="uid://mrrorvxxvens" path="res://Assets/PNG/Interface/Tiles/quest_zone.png" id="1_fbxhb"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 274.0
+offset_bottom = 56.0
+texture = ExtResource("1_fbxhb")
+
+[node name="Text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 267.0
+offset_bottom = 52.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "aaaa"

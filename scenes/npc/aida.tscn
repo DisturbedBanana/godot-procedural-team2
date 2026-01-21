@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://80nteilrs5cr"]
 
 [ext_resource type="Script" uid="uid://c0iawuetyuord" path="res://scripts/npc/npc.gd" id="1_d5hn3"]
-[ext_resource type="Texture2D" uid="uid://b2ieh2mw6y3e7" path="res://Assets/PNG/Tiles/Tiles/tile_0224.png" id="2_07wkr"]
+[ext_resource type="Texture2D" uid="uid://depd6xjt2tcyi" path="res://Assets/NPCs/aida.png" id="2_d5hn3"]
 [ext_resource type="PackedScene" uid="uid://g8lhx86tvf21" path="res://scenes/interactable_pnj.tscn" id="3_mi3tr"]
 [ext_resource type="Script" uid="uid://cq5nxwcy3afs6" path="res://scripts/npc/bubble_text.gd" id="4_vd7pq"]
 [ext_resource type="Texture2D" uid="uid://f0emmgefxrkq" path="res://Assets/PNG/Interface/Tiles/void.png" id="5_bd6n8"]
@@ -16,7 +16,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_07wkr")
+"texture": ExtResource("2_d5hn3")
 }],
 "loop": true,
 "name": &"default",
@@ -109,7 +109,7 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_d5hn3")
 type = 1
 can_give_quest = true
-voicelines_list = Array[String](["Itadakimasu bismillah!"])
+voicelines_list = Array[String](["T'es tombé dans le panneau ouuu?", "L'autoroute me manque..", "POUR LA LIBERTE DES MIMICS", ":3", "<metal_bar_pipe.mp3>"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_p1d5c")
@@ -126,11 +126,13 @@ shape = SubResource("CircleShape2D_dpyoa")
 script = ExtResource("4_vd7pq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MiniBubble"]
+z_index = 7
 position = Vector2(0, -23)
 sprite_frames = SubResource("SpriteFrames_r4bp4")
 animation = &"none"
 
 [node name="FullBubble" type="AnimatedSprite2D" parent="MiniBubble"]
+z_index = 10
 position = Vector2(1, -51.000004)
 scale = Vector2(2, 1.9020513)
 sprite_frames = SubResource("SpriteFrames_ay68w")

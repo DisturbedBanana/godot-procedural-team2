@@ -20,13 +20,17 @@ func _setup() -> void:
 			bubble_text.change_state(BubbleText.State.NewQuest)
 			has_to_give_quest = true
 		else:
-			return
+			can_say_dialog()
 	else:
 		
+		can_say_dialog()
+	
+func can_say_dialog():
+	var rand_number = randi() % 100
+	if(rand_number > 35):
 		bubble_text.change_state(BubbleText.State.Dialog)
 		has_to_talk = true
-	
-
+		can_give_quest = false
 
 func say_new_voiceline():
 	var random_text : String = voicelines_list.pick_random()
