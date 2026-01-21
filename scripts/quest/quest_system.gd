@@ -9,9 +9,29 @@ const biome_list = preload("res://resources/biomes/biome_list.tres")
 var id_quest : int = 0
 func _ready() -> void:
 	Instance = self
-	_create_new_quest(Data.QuestType.Tracassin)
-	_create_new_quest(Data.QuestType.Syndicat)
-
+	await get_tree().create_timer(0.2).timeout #j'avais pas d'idée comment delay autrement
+	_setup()
+	
+	
+func _setup() -> void:
+	var number_npc = 0
+	var used_npc : Array[NPC] = []
+	while(number_npc < 3):
+		var temp_npc : NPC = NPC.all_npc.pick_random()
+		if(used_npc.find(temp_npc) == -1 && temp_npc.can_give_quest && temp_npc.type != QuestData.QuestType.Tracassin):
+			get_new_quest(temp_npc)
+			number_npc += 1
+	
+	for npc in NPC.all_npc:
+		npc._setup()
+	
+		
+	
+func get_new_quest(npc : NPC):
+	var quest : QuestData = _create_new_quest(npc.type)
+	npc.quest = quest
+	
+	
 func _create_new_quest(type : Data.QuestType) -> QuestData:
 
 	var data = QuestData.new()
@@ -36,11 +56,15 @@ func _create_new_quest(type : Data.QuestType) -> QuestData:
 		var _quest_text = _quest_elements.get("quest")
 		data.type = type
 		data.action = data.dic_action.get(_quest_elements.get("objective"))
-		data.biome = biome_list.find_biome(_quest_elements.get("biome"))
+		data.biome = biome_list.find_biome(data.dic_biome.get(_quest_elements.get("biome")))
 		if _quest_elements.get("entity") != null:
 			data.entity = data.dic_entity.get(_quest_elements.get("entity"))
 		data.text = _quest_text
+		var number = data.dic_number.get(_quest_elements.get("number"))
+		data.number = number
 		data.id = id_quest
+		data.current_numb = number
+		quest_list.append(data)
 		id_quest += 1
 		return data
 	return null

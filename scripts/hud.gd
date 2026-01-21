@@ -3,7 +3,7 @@ class_name HUD extends CanvasLayer
 @export var quest_infos : PackedScene
 var previous_life : int
 static var Instance : HUD
-
+const QuestManager = preload("res://scripts/quest/quest_system.gd")
 @onready var life_container : BoxContainer = $"LifeContainer"
 @onready var quest_container : BoxContainer = $"Quests"
 
@@ -39,6 +39,7 @@ func _add_quest(id : int) -> void:
 	var quest = quest_infos.instantiate()
 	quest_container.add_child(quest)
 	quest.name = str(id)
+	_update_quest(id)
 	return
 
 func _remove_quest(id : int) -> void:
@@ -46,12 +47,12 @@ func _remove_quest(id : int) -> void:
 	quest_container.remove_child(quest_hud)
 
 func _update_quest(id : int) -> void:
-	var quest_text : RichTextLabel = quest_container.find_child(str(id))
-	var quest : QuestData = QuestSystem.Instance._find_quest_with_id(id)
+	var quest_text = quest_container.get_node(str(id))
+	var quest : QuestData = QuestManager.Instance._find_quest_with_id(id)
 	quest_text.text = "Vous devez {action} {number} {entity} dans {biome}".format({
 		"action": quest.dic_action.find_key(quest.action), 
 		"number": quest.current_numb,
 		"entity": quest.dic_entity.find_key(quest.entity), 
-		"biome": quest.dic_biome.find_key(quest.biome.name), 
+		"biome": quest.dic_biome.find_key(quest.biome.biome_name), 
 		})
 	return 

@@ -6,5 +6,5 @@
 [resource]
 resource_name = "Biome"
 script = ExtResource("1_g8y46")
-name = "Desert"
+biome_name = "Desert"
 secondaryBiomes = Array[ExtResource("1_g8y46")]([ExtResource("2_b013v")])

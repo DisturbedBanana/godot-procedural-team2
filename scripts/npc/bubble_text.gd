@@ -15,6 +15,7 @@ func remove_text():
 	change_state(State.None)
 	bubble_text.text = ""
 	
+	
 func display_quest(text : String):
 	change_state(State.DisplayedQuest)
 	bubble_text.text = text

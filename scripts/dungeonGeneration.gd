@@ -4,7 +4,7 @@ var currentRoom: Room
 @export var BiomsAndRooms:Dictionary = {}
 @export var BiomNameListInOrder:Array[String]
 var _loadedRooms = {}
-
+const QuestManager = preload("res://scripts/quest/quest_system.gd")
 var _mapMaxSize = 100.0
 var _posedRoom:Array[Array]
 
@@ -27,6 +27,7 @@ func _ready() -> void:
 	
 	_loadAllRoom()
 	_generate()
+	
 
 func _printMap() -> void:
 	var toPrint = ""
@@ -209,7 +210,7 @@ func _generate() -> void:
 			var randRoom=randi_range(0,_loadedRooms[biome].size()-1)
 			print(_loadedRooms[biome].size(), randRoom)
 			var room = (_loadedRooms[biome][randRoom]).instantiate()
-			room.position = (Vector2i(next_pos.x,next_pos.y) - Vector2i(center, center)) * space
+			room.position = (Vector2(next_pos.x,next_pos.y) - Vector2(center, center)) * space
 			(room as Room).room_pos=next_pos
 			(room as Room).biome=biome
 			(room as Room).onReady()
@@ -296,7 +297,7 @@ func _generate() -> void:
 					if dir==Vector2.DOWN:
 						dir = Vector2.UP			
 			walker_pos=currentRoom.room_pos
-
+	
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:

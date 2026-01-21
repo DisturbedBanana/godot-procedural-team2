@@ -9,16 +9,18 @@ func _set_interactable():
 	print_debug("set player interactable object : " + self.name)
 	Player.Instance.Interactable = self
 func _remove_interactable():
-	npc.bubble_text.remove_text()
+	if(!can_interact):
+		npc.bubble_text.remove_text()
 
 func on_interact():
 	if(can_interact):
 		if(npc.has_to_talk):
 			can_interact = false
 			npc.bubble_text.display_text(npc.say_new_voiceline())
-		elif(npc.has_to_give_quest):
+		elif(npc.has_to_give_quest && npc.quest != null):
 			can_interact = false
-			npc.get_new_quest()
+			var questttt = npc.quest
+			HUD.Instance._add_quest(npc.quest.id)
 			npc.bubble_text.display_quest(npc.quest.text)
 		print_debug("Interacted : " + self.name)
 	
