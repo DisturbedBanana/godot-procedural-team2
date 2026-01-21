@@ -1,7 +1,15 @@
 class_name spawner extends Area2D
 
 @export var spawnChance:Array[int]
-@export var enemy :Array[Enemy]
+var monster=preload("res://scenes/npc/enemy/fox.tscn")# PAS EU LE TEMPS 
+var slug=preload("res://scenes/npc/enemy/slug.tscn")
+var mosquito=preload("res://scenes/npc/enemy/mosquito.tscn")
+var mouse=preload("res://scenes/npc/enemy/mouse.tscn")
+var skull=preload("res://scenes/npc/enemy/mosquito.tscn")
+var castor=preload("res://scenes/npc/enemy/fox.tscn")
+var radish=preload("res://scenes/npc/enemy/mosquito.tscn")
+var rabbit=preload("res://scenes/npc/enemy/mouse.tscn")
+
 var room:Room
 var currentChance
 # Called when the node enters the scene tree for the first time.
@@ -14,7 +22,7 @@ func _ready() -> void:
 		push_error(node == null, "The door is not in any room")
 		return
 
-	room = (node as Room)
+	room = (node as Room)# CHANCES PROGRESSIVES EN FONCTION DE LA DISTANCE DU BIOME
 	if room.biome=="Forest" or room.biome=="Swamp" or room.biome=="Ruin":
 		currentChance=spawnChance[0]
 	elif room.biome=="LostWoods" or room.biome=="Bayou" or room.biome=="LostCity":
@@ -30,5 +38,40 @@ func _ready() -> void:
 func _spawn()-> void:
 	var rand=randi_range(0,currentChance)
 	if rand <= currentChance:
-		var _entity = enemy[0].Instantiate()
-		
+		match room.biome:#ON A TROP DE BIOMES AVEC UN ENNEMI PAR BIOME BON 
+			"Forest":
+				var en = rabbit.instantiate()
+				add_child(en)
+			"Ruin":
+				var en = radish.instantiate()
+				add_child(en)
+			"Swamp":
+				var en = slug.instantiate()
+				add_child(en)
+			"LostWoods":
+				var en = castor.instantiate()
+				add_child(en)
+			"Bayou":
+				var en = mosquito.instantiate()
+				add_child(en)
+			"LostCity":
+				var en = mouse.instantiate()
+				add_child(en)
+			"Desert1":
+				var en = monster.instantiate()
+				add_child(en)
+			"Desert2":
+				var en = monster.instantiate()
+				add_child(en)
+			"Desert3":
+				var en = monster.instantiate()
+				add_child(en)
+			"Enemy1":
+				var en = skull.instantiate()
+				add_child(en)
+			"Enemy2":
+				var en = skull.instantiate()
+				add_child(en)
+			"Enemy3":
+				var en = skull.instantiate()
+				add_child(en)

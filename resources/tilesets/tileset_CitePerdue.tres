@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://v036cx6hdk10"]
+[gd_resource type="TileSet" load_steps=23 format=3 uid="uid://v036cx6hdk10"]
 
 [ext_resource type="PackedScene" uid="uid://nmpi1435amt" path="res://scenes/key_collectible.tscn" id="1_tyemq"]
 [ext_resource type="PackedScene" uid="uid://dov4nkfsf27hs" path="res://scenes/heart_collectible.tscn" id="2_ep1ig"]
@@ -8,9 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://caqkxr3u45dsp" path="res://scenes/door_left.tscn" id="6_4t88h"]
 [ext_resource type="PackedScene" uid="uid://cu3fq7cx5qfjs" path="res://scenes/rdmTileSpikeWall.tscn" id="7_o5qun"]
 [ext_resource type="PackedScene" uid="uid://b5ogcl6f7n577" path="res://scenes/door_right.tscn" id="8_sf0ty"]
-[ext_resource type="PackedScene" uid="uid://deg5n4mnuxijq" path="res://scenes/collecSpawn.tscn" id="9_l0ejk"]
-[ext_resource type="PackedScene" uid="uid://b7dtoumn63bb5" path="res://scenes/heartSpawn.tscn" id="10_nwx4v"]
-[ext_resource type="PackedScene" uid="uid://dhnng1vedqw7m" path="res://scenes/keySpawn.tscn" id="11_aasid"]
+[ext_resource type="PackedScene" uid="uid://cfryi301fkrl2" path="res://scenes/collecSpawn.tscn" id="9_l0ejk"]
+[ext_resource type="PackedScene" uid="uid://dsixe2gd5m4ay" path="res://scenes/heartSpawn.tscn" id="10_nwx4v"]
+[ext_resource type="PackedScene" uid="uid://cmp7tiw3y08mj" path="res://scenes/keySpawn.tscn" id="11_aasid"]
+[ext_resource type="PackedScene" uid="uid://80nteilrs5cr" path="res://scenes/npc/aida.tscn" id="12_0ceqf"]
+[ext_resource type="PackedScene" uid="uid://ii8y312rhp87" path="res://scenes/npc/chestvrart.tscn" id="13_3ee6r"]
+[ext_resource type="PackedScene" uid="uid://b32vc1h4u585b" path="res://scenes/npc/diana.tscn" id="14_xix0u"]
+[ext_resource type="PackedScene" uid="uid://c5f8724mypoly" path="res://scenes/npc/karim.tscn" id="15_wqvrp"]
+[ext_resource type="PackedScene" uid="uid://3hw82afj25md" path="res://scenes/npc/npc.tscn" id="16_oprdu"]
+[ext_resource type="PackedScene" uid="uid://binh5ge6a6imc" path="res://scenes/npc/pedrito.tscn" id="17_dq24f"]
+[ext_resource type="PackedScene" uid="uid://bhlr8bh2ptvkj" path="res://scenes/npc/tracassin.tscn" id="18_pgujg"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1s6bk"]
 resource_name = "Collectibles"
@@ -313,9 +320,20 @@ scenes/6/scene = ExtResource("9_l0ejk")
 scenes/7/scene = ExtResource("10_nwx4v")
 scenes/8/scene = ExtResource("11_aasid")
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_wruyy"]
+resource_name = "PNJ"
+scenes/1/scene = ExtResource("12_0ceqf")
+scenes/2/scene = ExtResource("13_3ee6r")
+scenes/3/scene = ExtResource("14_xix0u")
+scenes/4/scene = ExtResource("15_wqvrp")
+scenes/5/scene = ExtResource("16_oprdu")
+scenes/6/scene = ExtResource("17_dq24f")
+scenes/7/scene = ExtResource("18_pgujg")
+
 [resource]
 resource_name = "Placeholder"
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_qyah5")
 sources/0 = SubResource("TileSetScenesCollectionSource_1s6bk")
 sources/2 = SubResource("TileSetScenesCollectionSource_efedq")
+sources/3 = SubResource("TileSetScenesCollectionSource_wruyy")
