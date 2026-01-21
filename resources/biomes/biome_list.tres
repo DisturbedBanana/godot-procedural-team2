@@ -13,5 +13,5 @@
 
 [resource]
 script = ExtResource("2_y6oeh")
-biomes_list = Array[ExtResource("1_8ww6k")]([ExtResource("3_k5xbj"), ExtResource("5_2utxy"), ExtResource("6_k3k1o"), ExtResource("8_e606d"), ExtResource("9_g3n12"), ExtResource("4_ykf4i"), ExtResource("7_ss7or"), ExtResource("2_8a5qc")])
+biomes_list = Array[ExtResource("1_8ww6k")]([ExtResource("2_8a5qc"), ExtResource("3_k5xbj"), ExtResource("5_2utxy"), ExtResource("7_ss7or"), ExtResource("8_e606d"), ExtResource("9_g3n12"), ExtResource("6_k3k1o"), ExtResource("4_ykf4i")])
 metadata/_custom_type_script = "uid://c07wljxhmniaf"

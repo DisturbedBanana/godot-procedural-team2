@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_u81sy")
-name = "Forest"
+biome_name = "Forest"
 secondaryBiomes = Array[ExtResource("1_u81sy")]([ExtResource("2_wtp1g")])
 metadata/_custom_type_script = "uid://br2lugol7f5ba"

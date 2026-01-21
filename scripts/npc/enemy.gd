@@ -77,7 +77,6 @@ func _set_state(state : STATE) -> void:
 			QuestManager.Instance._update_data(entity_quest_type)
 			_end_blink()
 			queue_free()
-		_:
 			_current_movement = default_movement
 
 	if !_can_move():

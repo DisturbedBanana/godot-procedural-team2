@@ -15,7 +15,7 @@ func _ready() -> void:
 func get_new_quest(npc : NPC):
 	var quest : QuestData = _create_new_quest(npc.type)
 	npc.quest = quest
-	HUD.Instance._add_quest(quest.id)
+	
 	
 func _create_new_quest(type : Data.QuestType) -> QuestData:
 
@@ -41,12 +41,15 @@ func _create_new_quest(type : Data.QuestType) -> QuestData:
 		var _quest_text = _quest_elements.get("quest")
 		data.type = type
 		data.action = data.dic_action.get(_quest_elements.get("objective"))
-		data.biome = biome_list.find_biome(_quest_elements.get("biome"))
+		data.biome = biome_list.find_biome(data.dic_biome.get(_quest_elements.get("biome")))
 		if _quest_elements.get("entity") != null:
 			data.entity = data.dic_entity.get(_quest_elements.get("entity"))
 		data.text = _quest_text
+		var number = data.dic_number.get(_quest_elements.get("number"))
+		data.number = number
 		data.id = id_quest
-		print(data.text)
+		data.current_numb = number
+		quest_list.append(data)
 		id_quest += 1
 		return data
 	return null
