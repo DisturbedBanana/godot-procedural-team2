@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://db5cfan2a3vjb"]
+[gd_scene load_steps=6 format=3 uid="uid://db5cfan2a3vjb"]
 
 [ext_resource type="Script" uid="uid://6tgphk7x871g" path="res://scripts/dungeonGeneration.gd" id="1_18nlu"]
 [ext_resource type="PackedScene" uid="uid://bib07te5reau7" path="res://scenes/player.tscn" id="1_qspk8"]
+[ext_resource type="Script" uid="uid://davpd7l47225i" path="res://scripts/quest/quest_system.gd" id="5_gubc5"]
 [ext_resource type="PackedScene" uid="uid://b20085rng87fk" path="res://scenes/hud.tscn" id="7_i43eg"]
 [ext_resource type="Script" uid="uid://vlnmhmu01l7d" path="res://scripts/BP_Target.gd" id="8_18nlu"]
 
@@ -11,7 +12,7 @@
 script = ExtResource("1_18nlu")
 BiomsAndRooms = {
 "Bayou": ["res://scenes/rooms/Paterne/room_Patern_01.tscn", "res://scenes/rooms/Paterne/room_Patern_02.tscn", "res://scenes/rooms/Paterne/room_Patern_03.tscn", "res://scenes/rooms/Paterne/room_Patern_04.tscn", "res://scenes/rooms/Paterne/room_Patern_05.tscn", "res://scenes/rooms/Paterne/room_Patern_06.tscn", "res://scenes/rooms/Paterne/room_Patern_07.tscn", "res://scenes/rooms/Paterne/room_Patern_08.tscn", "res://scenes/rooms/Paterne/room_Patern_09.tscn", "res://scenes/rooms/Paterne/room_Patern_10.tscn", "res://scenes/rooms/Paterne/room_Patern_11.tscn", "res://scenes/rooms/Paterne/room_Patern_12.tscn"],
-"Desert1": ["res://scenes/rooms/Paterne/room_Patern_01.tscn", "res://scenes/rooms/Paterne/room_Patern_02.tscn", "res://scenes/rooms/Paterne/room_Patern_03.tscn", "res://scenes/rooms/Paterne/room_Patern_04.tscn", "res://scenes/rooms/Paterne/room_Patern_05.tscn", "res://scenes/rooms/Paterne/room_Patern_06.tscn", "res://scenes/rooms/Paterne/room_Patern_07.tscn", "res://scenes/rooms/Paterne/room_Patern_08.tscn", "res://scenes/rooms/Paterne/room_Patern_09I.tscn", "res://scenes/rooms/Paterne/room_Patern_10.tscn", "res://scenes/rooms/Paterne/room_Patern_11.tscn", "res://scenes/rooms/Paterne/room_Patern_12.tscn"],
+"Desert1": ["res://scenes/rooms/Paterne/room_Patern_01.tscn", "res://scenes/rooms/Paterne/room_Patern_02.tscn", "res://scenes/rooms/Paterne/room_Patern_03.tscn", "res://scenes/rooms/Paterne/room_Patern_04.tscn", "res://scenes/rooms/Paterne/room_Patern_05.tscn", "res://scenes/rooms/Paterne/room_Patern_06.tscn", "res://scenes/rooms/Paterne/room_Patern_07.tscn", "res://scenes/rooms/Paterne/room_Patern_08.tscn", "res://scenes/rooms/Paterne/room_Patern_09.tscn", "res://scenes/rooms/Paterne/room_Patern_10.tscn", "res://scenes/rooms/Paterne/room_Patern_11.tscn", "res://scenes/rooms/Paterne/room_Patern_12.tscn"],
 "Desert2": ["res://scenes/rooms/Paterne/room_Patern_01.tscn", "res://scenes/rooms/Paterne/room_Patern_02.tscn", "res://scenes/rooms/Paterne/room_Patern_03.tscn", "res://scenes/rooms/Paterne/room_Patern_04.tscn", "res://scenes/rooms/Paterne/room_Patern_05.tscn", "res://scenes/rooms/Paterne/room_Patern_06.tscn", "res://scenes/rooms/Paterne/room_Patern_07.tscn", "res://scenes/rooms/Paterne/room_Patern_08.tscn", "res://scenes/rooms/Paterne/room_Patern_09.tscn", "res://scenes/rooms/Paterne/room_Patern_10.tscn", "res://scenes/rooms/Paterne/room_Patern_11.tscn", "res://scenes/rooms/Paterne/room_Patern_12.tscn"],
 "Desert3": ["res://scenes/rooms/Paterne/room_Patern_01.tscn", "res://scenes/rooms/Paterne/room_Patern_02.tscn", "res://scenes/rooms/Paterne/room_Patern_03.tscn", "res://scenes/rooms/Paterne/room_Patern_04.tscn", "res://scenes/rooms/Paterne/room_Patern_05.tscn", "res://scenes/rooms/Paterne/room_Patern_06.tscn", "res://scenes/rooms/Paterne/room_Patern_07.tscn", "res://scenes/rooms/Paterne/room_Patern_08.tscn", "res://scenes/rooms/Paterne/room_Patern_09.tscn", "res://scenes/rooms/Paterne/room_Patern_10.tscn", "res://scenes/rooms/Paterne/room_Patern_11.tscn", "res://scenes/rooms/Paterne/room_Patern_12.tscn"],
 "Forest": ["res://scenes/rooms/Paterne/room_Patern_01.tscn", "res://scenes/rooms/Paterne/room_Patern_02.tscn", "res://scenes/rooms/Paterne/room_Patern_03.tscn", "res://scenes/rooms/Paterne/room_Patern_04.tscn", "res://scenes/rooms/Paterne/room_Patern_05.tscn", "res://scenes/rooms/Paterne/room_Patern_06.tscn", "res://scenes/rooms/Paterne/room_Patern_07.tscn", "res://scenes/rooms/Paterne/room_Patern_08.tscn", "res://scenes/rooms/Paterne/room_Patern_09.tscn", "res://scenes/rooms/Paterne/room_Patern_10.tscn", "res://scenes/rooms/Paterne/room_Patern_11.tscn", "res://scenes/rooms/Paterne/room_Patern_12.tscn"],
@@ -35,3 +36,6 @@ zoom = Vector2(3, 3)
 
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("8_18nlu")
+
+[node name="QuestManager" type="Node2D" parent="."]
+script = ExtResource("5_gubc5")
