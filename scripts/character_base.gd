@@ -106,7 +106,6 @@ func apply_knockback(duration : float, velocity : Vector2) -> void:
 
 
 func _set_state(state : STATE) -> void:
-	print(state)
 	_state = state
 
 

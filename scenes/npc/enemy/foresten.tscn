@@ -48,6 +48,7 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_rb67g")
 entity_quest_type = 8
 attack_distance = 35.0
+follow_distance = 105.0
 sprites = [null, null]
 default_movement = ExtResource("2_linni")
 stunned_movemement = ExtResource("3_obhie")

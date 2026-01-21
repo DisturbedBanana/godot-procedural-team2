@@ -18,7 +18,6 @@ func onReady() -> void:
 	all_rooms.push_back(self)
 	if is_start_room==true:
 		Player.Instance.enter_room(self)
-	print(biome)
 	for layer in tilemap_layers:
 		match biome:
 			"hub":

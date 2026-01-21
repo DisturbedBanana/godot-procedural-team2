@@ -24,6 +24,7 @@ var dic_biome : Dictionary = {
 
 @export var attack_warm_up : float = 0.5
 @export var attack_distance : float = 0.5
+@export var follow_distance : float = 0.5
 
 var _state_timer : float = 0.0
 
@@ -62,24 +63,21 @@ func _exit_tree() -> void:
 
 
 func update_AI() -> void:
-		
-	if _can_move() && Player.Instance._room == _room:
-		print(_room.name)
-		print(Player.Instance._room.name)
-		var enemy_to_player = Player.Instance.global_position - global_position
-		if enemy_to_player.length() < attack_distance:
+	
+	var enemy_to_player = (Player.Instance.global_position - global_position).length()
+	if enemy_to_player < follow_distance:
+		if enemy_to_player < attack_distance:
 			_attack()
 		else:
 			anim.play("walk")
-			_direction = enemy_to_player.normalized()
-	else:
-		anim.play("idle")
-		_direction = Vector2.ZERO
+			_direction = (Player.Instance.global_position - global_position).normalized()
+
 
 
 func _set_state(state : STATE) -> void:
 	super(state)
-	_state_timer = 0.0
+	if state!=STATE.ATTACKING:
+		_state_timer = 0.0
 	match _state:
 		STATE.STUNNED:
 			anim.play("idle")
