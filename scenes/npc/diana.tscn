@@ -126,11 +126,13 @@ shape = SubResource("CircleShape2D_dpyoa")
 script = ExtResource("4_2uxl0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MiniBubble"]
+z_index = 7
 position = Vector2(0, -23)
 sprite_frames = SubResource("SpriteFrames_r4bp4")
 animation = &"none"
 
 [node name="FullBubble" type="AnimatedSprite2D" parent="MiniBubble"]
+z_index = 7
 position = Vector2(1, -51.000004)
 scale = Vector2(2, 1.9020513)
 sprite_frames = SubResource("SpriteFrames_ay68w")

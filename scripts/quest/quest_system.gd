@@ -21,7 +21,6 @@ func _setup() -> void:
 		if(used_npc.find(temp_npc) == -1 && temp_npc.can_give_quest && temp_npc.type != QuestData.QuestType.Tracassin):
 			get_new_quest(temp_npc)
 			number_npc += 1
-	
 	for npc in NPC.all_npc:
 		npc._setup()
 	
