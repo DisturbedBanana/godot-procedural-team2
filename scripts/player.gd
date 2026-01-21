@@ -127,7 +127,6 @@ func _set_state(state : STATE) -> void:
 			_set_color(dead_color)
 		STATE.IDLE:
 			animator.play(animation_list[0])
-		_:
 			_current_movement = default_movement
 
 	if !_can_move():
