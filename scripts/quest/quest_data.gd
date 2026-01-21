@@ -7,9 +7,11 @@ enum QuestEntity {Sign, Chest, Lamp, Mouse, Slug, Fox, Mosquito, Gun, Rifle, Axe
 var type : QuestType
 var action : QuestObjective
 var number : int
+var current_numb : int = number
 var entity : QuestEntity
 var biome : BiomeData
 var text : String
+var id : int
 
 var dic_action : Dictionary = {
 	"récupérer" : QuestObjective.Get,

@@ -9,7 +9,7 @@ var _mapMaxSize = 100.0
 var _posedRoom:Array[Array]
 
 
-var space = 32*8; # 16 is the number of tile SPACE IS ROOM SIZE DEPENDENT /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\
+var space = 16*16; # 16 is the number of tile SPACE IS ROOM SIZE DEPENDENT /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\ /!\
 
 var ForestRooms:Array[Room]
 var RuinRooms:Array[Room]
@@ -24,8 +24,9 @@ var S1Rooms:Array[Room]
 var S2Rooms:Array[Room]
 var S3Rooms:Array[Room]
 func _ready() -> void:
-	_loadAllRoom()
-	_generate()
+	return
+	#_loadAllRoom()
+	#_generate()
 
 func _printMap() -> void:
 	var toPrint = ""
@@ -58,9 +59,11 @@ func _generate() -> void:
 	var hub = _loadedRooms["hub"][0].instantiate()
 	add_child(hub)
 	hub.position = Vector2i.ZERO
+	hub.biome="hub"
 	(hub as Room).room_pos = walker_pos
 	(hub as Room).doors_states = [0, 2, 0, 0]
 	(hub as Room).is_start_room = true
+	(hub as Room).onReady()
 	_posedRoom[center][center] = 0
 	var directions := [
 		Vector2.UP,
@@ -206,6 +209,8 @@ func _generate() -> void:
 			var room = (_loadedRooms[biome][0]).instantiate()
 			room.position = (Vector2i(next_pos.x,next_pos.y) - Vector2i(center, center)) * space
 			(room as Room).room_pos=next_pos
+			(room as Room).biome=biome
+			(room as Room).onReady()
 			print(next_pos)
 			add_child(room)
 			match -dir:

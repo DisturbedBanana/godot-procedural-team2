@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://cos6qtvfs0hn1"]
+
+[ext_resource type="Script" uid="uid://b5df80s50tpg6" path="res://scripts/npc/enemy.gd" id="1_nq1f4"]
+[ext_resource type="Resource" uid="uid://4wrtqv1kgm5c" path="res://resources/enemy_default_movement.tres" id="2_nb7kl"]
+[ext_resource type="Resource" uid="uid://cxk1f1srqi8ot" path="res://resources/enemy_stunned_movement.tres" id="3_3vtpc"]
+[ext_resource type="PackedScene" uid="uid://imvv20oldcd0" path="res://scenes/enemy_attack.tscn" id="4_c6yed"]
+[ext_resource type="Texture2D" uid="uid://bpf1mlywjj88r" path="res://Assets/PNG/Enemies/Tiles/tile_0007.png" id="5_3vtpc"]
+[ext_resource type="Texture2D" uid="uid://b8bsgl6ui1emr" path="res://Assets/PNG/Enemies/Tiles/tile_0004.png" id="6_c6yed"]
+[ext_resource type="Texture2D" uid="uid://dubyg6g37cmh" path="res://Assets/PNG/Enemies/Tiles/tile_0006.png" id="7_c6yed"]
+[ext_resource type="Texture2D" uid="uid://ddjvtpidnc2vg" path="res://Assets/PNG/Enemies/Tiles/tile_0005.png" id="7_gmxsb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p1d5c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pg8qt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3vtpc")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_c6yed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_c6yed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c6yed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gmxsb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_c6yed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gmxsb")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("sprites", "attack_spawn_point")]
+collision_mask = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_nq1f4")
+entity_quest_type = 4
+attack_distance = 30.0
+sprites = [NodePath(""), NodePath("")]
+default_movement = ExtResource("2_nb7kl")
+stunned_movemement = ExtResource("3_3vtpc")
+attack_scene = ExtResource("4_c6yed")
+attack_spawn_point = NodePath("")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p1d5c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pg8qt")
+animation = &"idle"
+frame_progress = 0.19562724

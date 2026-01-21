@@ -1,22 +1,22 @@
-[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://cc3uktylmyqef"]
+[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://d31s1bmm3fd3f"]
 
-[ext_resource type="PackedScene" uid="uid://nmpi1435amt" path="res://scenes/key_collectible.tscn" id="1_p1d1a"]
-[ext_resource type="PackedScene" uid="uid://dov4nkfsf27hs" path="res://scenes/heart_collectible.tscn" id="2_bijxk"]
-[ext_resource type="Texture2D" uid="uid://diosqbj6igsil" path="res://sprites/Biome_Foret1.png" id="3_p1d1a"]
-[ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://scenes/enemy.tscn" id="4_eh2sq"]
-[ext_resource type="PackedScene" uid="uid://cinljgej7owpj" path="res://scenes/spikes.tscn" id="5_0vhyb"]
-[ext_resource type="PackedScene" uid="uid://caqkxr3u45dsp" path="res://scenes/door_left.tscn" id="6_pse3y"]
-[ext_resource type="PackedScene" uid="uid://cu3fq7cx5qfjs" path="res://scenes/rdmTileSpikeWall.tscn" id="7_yj5bl"]
-[ext_resource type="PackedScene" uid="uid://b5ogcl6f7n577" path="res://scenes/door_right.tscn" id="8_mhgas"]
+[ext_resource type="PackedScene" uid="uid://nmpi1435amt" path="res://scenes/key_collectible.tscn" id="1_chwhu"]
+[ext_resource type="PackedScene" uid="uid://dov4nkfsf27hs" path="res://scenes/heart_collectible.tscn" id="2_uvj0g"]
+[ext_resource type="Texture2D" uid="uid://ccn2bkaqrma3x" path="res://sprites/tilemap_Swamp.png" id="3_chwhu"]
+[ext_resource type="PackedScene" uid="uid://b0ahenmxn2ain" path="res://scenes/npc/enemy/enemy.tscn" id="4_1wkhe"]
+[ext_resource type="PackedScene" uid="uid://cinljgej7owpj" path="res://scenes/spikes.tscn" id="5_6hg84"]
+[ext_resource type="PackedScene" uid="uid://caqkxr3u45dsp" path="res://scenes/door_left.tscn" id="6_7no8w"]
+[ext_resource type="PackedScene" uid="uid://cu3fq7cx5qfjs" path="res://scenes/rdmTileSpikeWall.tscn" id="7_vnhld"]
+[ext_resource type="PackedScene" uid="uid://b5ogcl6f7n577" path="res://scenes/door_right.tscn" id="8_1wkhe"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1s6bk"]
 resource_name = "Collectibles"
-scenes/1/scene = ExtResource("1_p1d1a")
-scenes/2/scene = ExtResource("2_bijxk")
+scenes/1/scene = ExtResource("1_chwhu")
+scenes/2/scene = ExtResource("2_uvj0g")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qyah5"]
 resource_name = "Environement"
-texture = ExtResource("3_p1d1a")
+texture = ExtResource("3_chwhu")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -5.036044, -5.935338, -5.036044, -5.5756207, 8, -8, 8)
 1:0/0 = 0
@@ -301,11 +301,11 @@ texture = ExtResource("3_p1d1a")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_efedq"]
 resource_name = "Obstacles"
-scenes/1/scene = ExtResource("4_eh2sq")
-scenes/2/scene = ExtResource("5_0vhyb")
-scenes/3/scene = ExtResource("6_pse3y")
-scenes/4/scene = ExtResource("7_yj5bl")
-scenes/5/scene = ExtResource("8_mhgas")
+scenes/1/scene = ExtResource("4_1wkhe")
+scenes/2/scene = ExtResource("5_6hg84")
+scenes/3/scene = ExtResource("6_7no8w")
+scenes/4/scene = ExtResource("7_vnhld")
+scenes/5/scene = ExtResource("8_1wkhe")
 
 [resource]
 resource_name = "Placeholder"

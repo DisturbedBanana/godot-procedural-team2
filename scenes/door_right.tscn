@@ -10,7 +10,7 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3msj"]
 size = Vector2(16, 16)
 
-[node name="Door" type="StaticBody2D" node_paths=PackedStringArray("closedNode", "openNode", "wallNode", "secretNode")]
+[node name="Door2" type="StaticBody2D" node_paths=PackedStringArray("closedNode", "openNode", "wallNode", "secretNode")]
 script = ExtResource("1_ehkvc")
 closedNode = NodePath("Closed")
 openNode = NodePath("Open")

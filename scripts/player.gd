@@ -1,5 +1,6 @@
 class_name Player extends CharacterBase
 
+@onready var quest_sys = $"QuestSystem"
 static var Instance : Player
 
 @export_group("Input")
@@ -10,6 +11,10 @@ static var Instance : Player
 @export var bullet_speed : float = 600.0
 @export var fire_rate : float = 0.2
 @export var muzzle_offset : Vector2 = Vector2(20, 0)
+
+@export_group("Animation")
+@onready var animator = $AnimatedSprite2D
+@export var animation_list : Array[String] = ["idle2", "walk"]
 
 #Interaction
 var Interactable : InteractableBase = null
@@ -31,7 +36,7 @@ func _process(delta: float) -> void:
 	
 	# 1. ROTATION LOGIC
 	# Faces the mouse cursor
-	#look_at(get_global_mouse_position())
+	look_at(get_global_mouse_position())
 	
 	# Update Timers
 	if _shoot_timer > 0:
@@ -49,6 +54,10 @@ func _update_inputs() -> void:
 		else:
 			_direction = _direction.normalized()
 
+		if velocity.length() > 0 :
+			animator.play(animation_list[1])
+
+		
 		# 2. SHOOTING INPUT
 		if Input.is_action_pressed("Attack") and _shoot_timer <= 0:
 			shoot_at_mouse()
@@ -117,6 +126,8 @@ func _set_state(state : STATE) -> void:
 		STATE.DEAD:
 			_end_blink()
 			_set_color(dead_color)
+		STATE.IDLE:
+			animator.play(animation_list[0])
 		_:
 			_current_movement = default_movement
 

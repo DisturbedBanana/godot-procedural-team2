@@ -42,7 +42,7 @@ var _state : STATE = STATE.IDLE
 var _is_blinking : bool
 
 # Dungeon position
-var _room #: Room
+var _room : Room
 
 @onready var main_sprite : Sprite2D = $"BodySprite"
 #@onready var main_sprite : AnimatedSprite2D = $"AnimatedSprite2D"
@@ -61,7 +61,8 @@ func _physics_process(_delta: float) -> void:
 		velocity += _direction * _current_movement.acceleration * get_physics_process_delta_time()
 		velocity = velocity.limit_length(_current_movement.speed_max)
 		if self is not Player:
-			main_sprite.rotation = _compute_orientation_angle(_direction)
+			if main_sprite != null:
+				main_sprite.rotation = _compute_orientation_angle(_direction)
 			
 	else:
 		## If direction length == 0, Apply friction
@@ -117,8 +118,8 @@ func blink() -> void:
 
 		invincibility_timer += get_process_delta_time()
 		var isVisible : bool = (int)(invincibility_timer/ invincibility_blink_period) % 2 == 1
-		for sprite in sprites:
-			sprite.visible = isVisible
+		#for sprite in sprites: alexis le fera
+		#	sprite.visible = isVisible
 		await get_tree().process_frame
 
 	_end_blink()
@@ -128,8 +129,8 @@ func _end_blink() -> void:
 	if !_is_blinking:
 		return
 
-	for sprite in sprites:
-		sprite.visible = true
+	#for sprite in sprites:
+	#	sprite.visible = true
 
 	_is_blinking = false
 
