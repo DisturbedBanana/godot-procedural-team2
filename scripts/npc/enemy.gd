@@ -1,9 +1,23 @@
 class_name Enemy extends CharacterBase
 const Data = preload("res://scripts/quest/quest_data.gd")
+const QuestManager = preload("res://scripts/quest/quest_system.gd")
 @onready var anim = $AnimatedSprite2D
 
 static var all_enemies : Array[Enemy]
-
+var dic_biome : Dictionary = {
+	"Forest" : "Forest",
+	"LostWoods" : "ForgottenWood",
+	"Desert1" : "Desert",
+	"Desert2" : "Desert",
+	"Desert3" : "Desert",
+	"Steppe1" : "Steppe",
+	"Steppe2" : "Steppe",
+	"Steppe3" : "Steppe",
+	"Ruin" : "Ruins",
+	"LostCity" : "LostCity",
+	"Swamp" : "Swamp",
+	"Bayou" : "Bayou"
+}
 @export var entity_quest_type : Data.QuestEntity
 
 @export var attack_warm_up : float = 0.5
@@ -17,10 +31,12 @@ var _current_biome : BiomeData
 func _ready() -> void:
 	anim.play("idle")
 	all_enemies.push_back(self)
+	var room_biome
 	for room in Room.all_rooms:
 		if room.contains(global_position):
 			_room = room
-			_current_biome = _room.biome
+			
+			_current_biome.name = dic_biome.get(_room.biome)
 			break
 	_set_state(STATE.IDLE)
 
@@ -57,6 +73,7 @@ func _set_state(state : STATE) -> void:
 			_current_movement = stunned_movemement
 		STATE.DEAD:
 			anim.play("death")
+			
 			_end_blink()
 			queue_free()
 		_:
