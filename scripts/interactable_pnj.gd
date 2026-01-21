@@ -16,8 +16,9 @@ func on_interact():
 		if(npc.has_to_talk):
 			can_interact = false
 			npc.bubble_text.display_text(npc.say_new_voiceline())
-		elif(npc.quest != null):
+		elif(npc.has_to_give_quest):
 			can_interact = false
+			npc.get_new_quest()
 			npc.bubble_text.display_quest(npc.quest.text)
 		print_debug("Interacted : " + self.name)
 	

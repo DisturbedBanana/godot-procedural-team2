@@ -64,7 +64,7 @@ func death() -> void:
 	anim.play(\"death\")
 "
 
-[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
+[node name="Enemy2" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
 collision_mask = 3
 motion_mode = 1
 wall_min_slide_angle = 0.0

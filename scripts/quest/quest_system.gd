@@ -7,7 +7,7 @@ static var Instance : QuestSystem
 var quest_list : Array[QuestData] = []
 const biome_list = preload("res://resources/biomes/biome_list.tres")
 var id_quest : int = 0
-func _init() -> void:
+func _ready() -> void:
 	Instance = self
 	_create_new_quest(Data.QuestType.Tracassin)
 	_create_new_quest(Data.QuestType.Syndicat)
@@ -45,12 +45,16 @@ func _create_new_quest(type : Data.QuestType) -> QuestData:
 		return data
 	return null
 		
-func _check_data(data: ActionData):
+func _update_data(entity : Data.QuestEntity):
 	for quest in quest_list:
-		if((data.action == quest.action) && (data.biome == quest.biome) && (data.entity == quest.entity)):
+		if(entity == quest.entity):
 			quest.current_numb -= 1
+			HUD.Instance._update_quest(quest.id)
 			if(quest.current_numb == 0):
 				_validate_quest(quest)
+				HUD.Instance._remove_quest(quest.id)
+				
+
 				
 func _validate_quest(quest: QuestData):
 	var index_quest = quest_list.find(quest)
@@ -60,6 +64,11 @@ func _validate_quest(quest: QuestData):
 func _find_quest(type : Data.QuestType):
 	for quest in quest_list:
 		if(quest.type == type):
+			return quest
+
+func _find_quest_with_id(id : int):
+	for quest in quest_list:
+		if(quest.id == id):
 			return quest
 		
 class ActionData extends Resource:

@@ -15,8 +15,12 @@
   "enemies": [
 	"souris",
 	"limaces",
-	"renards",
-    "moustiques"
+	"monstres",
+	"moustiques",
+	"castors",
+	"cranes",
+	"radis",
+	"lapins"
   ],
   "objectsTracassin": [
 	"pistolets",

@@ -6,10 +6,12 @@ var quest : QuestData
 @export var can_give_quest : bool
 @export var voicelines_list : Array[String] = []
 var has_to_talk : bool
+var has_to_give_quest : bool
 
 func _ready() -> void:
 	if(can_give_quest):
-		get_new_quest()
+		bubble_text.change_state(BubbleText.State.NewQuest)
+		has_to_give_quest = true
 	else:
 		
 		bubble_text.change_state(BubbleText.State.Dialog)
@@ -22,7 +24,7 @@ func get_new_quest():
 		quest = QuestManager.Instance._create_new_quest(type)
 	else:
 		quest = quest_temp
-	bubble_text.change_state(BubbleText.State.NewQuest)
+	HUD.Instance._add_quest(quest.id)
 	
 func say_new_voiceline():
 	var random_text : String = voicelines_list.pick_random()
